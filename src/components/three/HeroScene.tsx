@@ -15,46 +15,54 @@ function rise(t: number, delay: number, duration = 1.3) {
   return 1 - Math.pow(1 - p, 4);
 }
 
-function Windows({ w, h, d, seed }: { w: number; h: number; d: number; seed: number }) {
+const LOBBY_H = 0.36;
+
+/** Window grid on all four facades (the ground floor is left for the lobby). */
+function Windows({ w, h, d, seed, base }: { w: number; h: number; d: number; seed: number; base: number }) {
   const ref = useRef<THREE.InstancedMesh>(null);
 
   const slots = useMemo(() => {
-    const out: { pos: [number, number, number]; rotY: number; lit: boolean }[] = [];
-    let s = seed;
-    const rand = () => ((s = (s * 9301 + 49297) % 233280) / 233280);
-    const rows = Math.max(1, Math.floor((h - 0.35) / 0.34));
-    const faces = [
-      { cols: Math.floor(w / 0.26), span: w, z: d / 2 + 0.006, x: null as number | null, rotY: 0 },
-      { cols: Math.floor(d / 0.26), span: d, z: null as number | null, x: w / 2 + 0.006, rotY: Math.PI / 2 },
+    const out: { pos: [number, number, number]; rotY: number; tone: 0 | 1 | 2 }[] = [];
+    // Deterministic pseudo-random value per window, so lit windows stay put between renders.
+    const rand = (i: number) => {
+      const x = Math.sin(seed * 999 + i * 12.9898) * 43758.5453;
+      return x - Math.floor(x);
+    };
+    const rows = Math.max(1, Math.floor((h - base - 0.22) / 0.34) + 1);
+    const o = 0.006;
+    // Facades: front, right, back, left
+    const faces: { span: number; place: (along: number, y: number) => [number, number, number]; rotY: number }[] = [
+      { span: w, place: (a, y) => [a, y, d / 2 + o], rotY: 0 },
+      { span: d, place: (a, y) => [w / 2 + o, y, -a], rotY: Math.PI / 2 },
+      { span: w, place: (a, y) => [-a, y, -d / 2 - o], rotY: Math.PI },
+      { span: d, place: (a, y) => [-w / 2 - o, y, a], rotY: -Math.PI / 2 },
     ];
     for (const f of faces) {
+      const cols = Math.max(1, Math.floor(f.span / 0.26));
       for (let r = 0; r < rows; r++) {
-        for (let c = 0; c < f.cols; c++) {
-          const along = -f.span / 2 + (f.span / f.cols) * (c + 0.5);
-          const y = 0.32 + r * 0.34;
-          out.push({
-            pos: f.x === null ? [along, y, f.z!] : [f.x, y, -along],
-            rotY: f.rotY,
-            lit: rand() > 0.82,
-          });
+        for (let c = 0; c < cols; c++) {
+          const along = -f.span / 2 + (f.span / cols) * (c + 0.5);
+          const y = base + 0.2 + r * 0.34;
+          if (y > h - 0.12) continue;
+          const roll = rand(out.length);
+          out.push({ pos: f.place(along, y), rotY: f.rotY, tone: roll > 0.84 ? 1 : roll > 0.7 ? 2 : 0 });
         }
       }
     }
     return out;
-  }, [w, h, d, seed]);
+  }, [w, h, d, seed, base]);
 
   useLayoutEffect(() => {
     const mesh = ref.current;
     if (!mesh) return;
     const m = new THREE.Object3D();
-    const navy = new THREE.Color(NAVY);
-    const green = new THREE.Color(GREEN);
+    const tones = [new THREE.Color(NAVY), new THREE.Color(GREEN), new THREE.Color("#4f68c2")];
     slots.forEach((s, i) => {
       m.position.set(...s.pos);
       m.rotation.set(0, s.rotY, 0);
       m.updateMatrix();
       mesh.setMatrixAt(i, m.matrix);
-      mesh.setColorAt(i, s.lit ? green : navy);
+      mesh.setColorAt(i, tones[s.tone]);
     });
     mesh.instanceMatrix.needsUpdate = true;
     if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
@@ -63,8 +71,24 @@ function Windows({ w, h, d, seed }: { w: number; h: number; d: number; seed: num
   return (
     <instancedMesh ref={ref} args={[undefined, undefined, slots.length]}>
       <planeGeometry args={[0.13, 0.2]} />
-      <meshStandardMaterial roughness={0.2} metalness={0.3} side={THREE.DoubleSide} />
+      <meshStandardMaterial roughness={0.15} metalness={0.35} />
     </instancedMesh>
+  );
+}
+
+/** Thin horizontal ledges between floors, wrapping the whole building. */
+function Ledges({ w, h, d }: { w: number; h: number; d: number }) {
+  const ys: number[] = [];
+  for (let y = LOBBY_H + 0.03; y < h - 0.2; y += 0.68) ys.push(y);
+  return (
+    <>
+      {ys.map((y) => (
+        <mesh key={y} position={[0, y, 0]}>
+          <boxGeometry args={[w + 0.035, 0.022, d + 0.035]} />
+          <meshStandardMaterial color="#e3e8f5" roughness={0.5} />
+        </mesh>
+      ))}
+    </>
   );
 }
 
@@ -74,12 +98,14 @@ function Building({
   delay,
   seed = 1,
   roof,
+  antenna,
 }: {
   position: [number, number];
   size: [number, number, number];
   delay: number;
   seed?: number;
   roof?: boolean;
+  antenna?: boolean;
 }) {
   const ref = useRef<THREE.Group>(null);
   const [w, h, d] = size;
@@ -95,18 +121,69 @@ function Building({
         <meshStandardMaterial color="#ffffff" roughness={0.45} />
         <Edges color={NAVY} lineWidth={1.4} />
       </mesh>
+
+      {/* Glass lobby with a green entrance on the front (houses get a door instead) */}
+      {roof ? (
+        <mesh position={[0, 0.17, d / 2 + 0.012]}>
+          <boxGeometry args={[0.16, 0.34, 0.02]} />
+          <meshStandardMaterial color={NAVY} />
+        </mesh>
+      ) : (
+      <>
+      <mesh position={[0, LOBBY_H / 2, 0]}>
+        <boxGeometry args={[w + 0.02, LOBBY_H, d + 0.02]} />
+        <meshStandardMaterial color={NAVY} roughness={0.15} metalness={0.4} />
+      </mesh>
+      <mesh position={[0, LOBBY_H + 0.015, 0]}>
+        <boxGeometry args={[w + 0.08, 0.03, d + 0.08]} />
+        <meshStandardMaterial color="#ffffff" />
+      </mesh>
+      <mesh position={[0, LOBBY_H * 0.42, d / 2 + 0.014]}>
+        <boxGeometry args={[Math.min(0.3, w * 0.35), LOBBY_H * 0.84, 0.01]} />
+        <meshStandardMaterial color={GREEN} emissive={GREEN} emissiveIntensity={0.35} />
+      </mesh>
+      </>
+      )}
+
+      {h > 1.2 && <Ledges w={w} h={h} d={d} />}
+
       {roof ? (
         <mesh position={[0, h + 0.28, 0]} rotation={[0, Math.PI / 4, 0]} castShadow>
           <coneGeometry args={[Math.max(w, d) * 0.78, 0.56, 4]} />
           <meshStandardMaterial color={NAVY} roughness={0.5} />
         </mesh>
       ) : (
-        <mesh position={[0, h + 0.03, 0]}>
-          <boxGeometry args={[w * 0.6, 0.06, d * 0.6]} />
-          <meshStandardMaterial color={NAVY} />
-        </mesh>
+        <>
+          {/* Parapet crown */}
+          <mesh position={[0, h + 0.03, 0]}>
+            <boxGeometry args={[w + 0.05, 0.06, d + 0.05]} />
+            <meshStandardMaterial color={NAVY} />
+          </mesh>
+          {/* Rooftop plant boxes */}
+          <mesh position={[-w * 0.18, h + 0.13, -d * 0.12]} castShadow>
+            <boxGeometry args={[w * 0.32, 0.16, d * 0.3]} />
+            <meshStandardMaterial color="#eef1f8" />
+            <Edges color={NAVY} lineWidth={1} />
+          </mesh>
+          <mesh position={[w * 0.22, h + 0.1, d * 0.18]} castShadow>
+            <boxGeometry args={[w * 0.22, 0.1, d * 0.22]} />
+            <meshStandardMaterial color={GREEN} />
+          </mesh>
+          {antenna && (
+            <group position={[w * 0.2, h, -d * 0.2]}>
+              <mesh position={[0, 0.35, 0]}>
+                <cylinderGeometry args={[0.012, 0.018, 0.7, 6]} />
+                <meshStandardMaterial color={NAVY} />
+              </mesh>
+              <mesh position={[0, 0.72, 0]}>
+                <sphereGeometry args={[0.035, 12, 12]} />
+                <meshStandardMaterial color={GREEN} emissive={GREEN} emissiveIntensity={0.8} />
+              </mesh>
+            </group>
+          )}
+        </>
       )}
-      <Windows w={w} h={h} d={d} seed={seed} />
+      <Windows w={w} h={h} d={d} seed={seed} base={roof ? 0.05 : LOBBY_H} />
     </group>
   );
 }
@@ -254,7 +331,7 @@ function City() {
       </mesh>
 
       {/* Logo-inspired towers */}
-      <Building position={[-0.25, -0.65]} size={[1.05, 3.6, 1.05]} delay={0.2} seed={3} />
+      <Building position={[-0.25, -0.65]} size={[1.05, 3.6, 1.05]} delay={0.2} seed={3} antenna />
       <Building position={[1.0, -0.35]} size={[0.9, 2.5, 1.0]} delay={0.4} seed={7} />
       <Building position={[-1.45, -0.15]} size={[0.85, 1.8, 0.9]} delay={0.55} seed={11} />
       {/* Multifamily block */}
