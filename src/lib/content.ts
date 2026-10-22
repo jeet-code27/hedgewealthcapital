@@ -13,8 +13,8 @@ export const contact = {
 };
 
 export const nav = [
-  { label: "Loan Programs", href: "#loan-programs" },
-  { label: "How It Works", href: "#how-it-works" },
+  { label: "Loan Programs", href: "/#loan-programs" },
+  { label: "How It Works", href: "/#how-it-works" },
   { label: "Brokers", href: "/brokers" },
   { label: "Resources", href: "/resources" },
   { label: "About", href: "/about-hedge-wealth-capital" },

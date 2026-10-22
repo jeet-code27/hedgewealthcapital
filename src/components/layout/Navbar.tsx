@@ -28,7 +28,7 @@ export default function Navbar() {
         }`}
       >
         <Link href="/" className="flex items-center gap-2.5" aria-label="Hedge Wealth Capital home">
-          <Image src="/images/hwc-logo.png" alt="Hedge Wealth Capital" width={1536} height={760} className="h-12 w-auto" preload />
+          <Image src="/images/hwc-logo.png" alt="Hedge Wealth Capital" width={1536} height={760} className="h-14 w-auto sm:h-16" preload />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
@@ -49,7 +49,7 @@ export default function Navbar() {
             {contact.phone}
           </a>
           <Link
-            href="#prequalify"
+            href="/#prequalify"
             className="hidden rounded-xl bg-navy px-4 py-2.5 text-[14px] font-bold text-white transition hover:bg-navy-700 sm:inline-flex"
           >
             Discuss Your Deal
@@ -87,7 +87,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="#prequalify"
+              href="/#prequalify"
               onClick={() => setOpen(false)}
               className="mt-2 block rounded-xl bg-leaf px-3 py-3 text-center font-bold text-navy"
             >

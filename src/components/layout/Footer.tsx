@@ -19,7 +19,7 @@ export default function Footer() {
               alt="Hedge Wealth Capital"
               width={1536}
               height={760}
-              className="h-16 w-auto brightness-0 invert"
+              className="h-20 w-auto brightness-0 invert"
             />
             <p className="mt-6 max-w-xs leading-relaxed text-white/60">{footer.brand}</p>
           </div>

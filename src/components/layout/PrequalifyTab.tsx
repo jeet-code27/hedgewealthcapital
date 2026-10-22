@@ -1,25 +1,30 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 
-/** Vertical tab pinned to the left edge that jumps to the prequalify form; hides while the form is on screen. */
+/** Vertical tab pinned to the left edge that jumps to the homepage prequalify form; hides while the form is on screen. */
 export default function PrequalifyTab() {
-  const [formVisible, setFormVisible] = useState(false);
+  const pathname = usePathname();
+  // Visibility is recorded per page, so a stale value never carries over after navigating.
+  const [seen, setSeen] = useState({ path: pathname, visible: false });
+  const formVisible = seen.path === pathname && seen.visible;
 
+  // Re-check on every route change: the form only exists on pages that render it.
   useEffect(() => {
     const form = document.getElementById("prequalify");
     if (!form) return;
-    const io = new IntersectionObserver(([e]) => setFormVisible(e.isIntersecting), { threshold: 0.2 });
+    const io = new IntersectionObserver(([e]) => setSeen({ path: pathname, visible: e.isIntersecting }), { threshold: 0.2 });
     io.observe(form);
     return () => io.disconnect();
-  }, []);
+  }, [pathname]);
 
   return (
     <AnimatePresence>
       {!formVisible && (
         <motion.a
-          href="#prequalify"
+          href="/#prequalify"
           initial={{ x: -80 }}
           animate={{ x: 0 }}
           exit={{ x: -80 }}

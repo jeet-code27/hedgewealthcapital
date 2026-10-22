@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Manrope, Instrument_Serif } from "next/font/google";
 import SmoothScroll from "@/components/SmoothScroll";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import PrequalifyTab from "@/components/layout/PrequalifyTab";
+import CallButton from "@/components/layout/CallButton";
 import "./globals.css";
 
 // Manrope matches the client's reference (lendingone.com). Instrument Serif stands in
@@ -27,7 +31,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${manrope.variable} ${serifDisplay.variable} antialiased`}>
       <body className="min-h-full">
-        <SmoothScroll>{children}</SmoothScroll>
+        <SmoothScroll>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+          <PrequalifyTab />
+          <CallButton />
+        </SmoothScroll>
       </body>
     </html>
   );
