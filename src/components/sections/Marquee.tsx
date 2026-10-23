@@ -1,13 +1,4 @@
-const items = [
-  "Fix & Flip Loans",
-  "DSCR Rental Loans",
-  "Ground-Up Construction",
-  "Multifamily Bridge",
-  "Purchase",
-  "Renovation",
-  "Refinance",
-  "Rental Ownership",
-];
+import { marquee as items } from "@/lib/content";
 
 export default function Marquee() {
   return (

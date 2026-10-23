@@ -22,9 +22,9 @@ const serifDisplay = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Real Estate Investment Loans | Hedge Wealth Capital",
+  title: "Private Money Loans for Real Estate Investors | Hedge Wealth Capital",
   description:
-    "Explore fix-and-flip, DSCR rental, construction and multifamily bridge financing with Hedge Wealth Capital. Discuss your property and funding goals.",
+    "Private money loans for real estate investors: up to 100% LTC fix & flip, ground-up construction, multifamily, and 30-year DSCR rental loans. Same-day approval, close in 5–10 business days.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

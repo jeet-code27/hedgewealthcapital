@@ -1,9 +1,12 @@
 import Hero from "@/components/sections/Hero";
 import Marquee from "@/components/sections/Marquee";
+import LtcPromo from "@/components/sections/LtcPromo";
 import Strategies from "@/components/sections/Strategies";
-import Financing from "@/components/sections/Financing";
+import Highlights from "@/components/sections/Highlights";
 import Process from "@/components/sections/Process";
-import Compare from "@/components/sections/Compare";
+import WhyHwc from "@/components/sections/WhyHwc";
+import About from "@/components/sections/About";
+import Broker from "@/components/sections/Broker";
 import Faq from "@/components/sections/Faq";
 import Prequalify from "@/components/sections/Prequalify";
 
@@ -12,10 +15,13 @@ export default function Home() {
     <>
       <Hero />
       <Marquee />
+      <LtcPromo />
       <Strategies />
-      <Financing />
+      <Highlights />
       <Process />
-      <Compare />
+      <WhyHwc />
+      <About />
+      <Broker />
       <Faq />
       <Prequalify />
     </>

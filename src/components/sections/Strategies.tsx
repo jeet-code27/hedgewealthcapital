@@ -39,7 +39,7 @@ function TiltCard({ children, className = "" }: { children: React.ReactNode; cla
 
 export default function Strategies() {
   return (
-    <section id="strategies" className="relative py-24 lg:py-32">
+    <section id="loan-programs" className="relative scroll-mt-24 py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
           <div>
@@ -47,12 +47,12 @@ export default function Strategies() {
               <span className="text-sm font-bold tracking-[0.2em] text-leaf-600 uppercase">Loan Programs</span>
             </Reveal>
             <h2 className="mt-4 max-w-2xl text-4xl leading-[1.05] font-extrabold tracking-[-0.03em] text-navy sm:text-5xl lg:text-6xl">
-              <WordsReveal text="Start With Your" />
-              <WordsReveal text="Investment Strategy" className="font-serif font-normal italic tracking-normal" delay={0.15} />
+              <WordsReveal text="A Comprehensive Range" />
+              <WordsReveal text="of Loan Options" className="font-serif font-normal italic tracking-normal" delay={0.15} />
             </h2>
           </div>
           <Reveal delay={0.2} className="max-w-sm text-muted">
-            Four programs, one starting point: what you plan to do with the property after you buy it.
+            HWC offers a wide variety of no-income-verification loans for your real estate investment needs.
           </Reveal>
         </div>
 

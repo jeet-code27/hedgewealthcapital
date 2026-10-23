@@ -16,12 +16,14 @@ const HeroScene = dynamic(() => import("@/components/three/HeroScene"), {
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-const chips = [
-  { label: "Fix & Flip", note: "Acquisition + renovation", className: "left-[2%] top-[18%]", delay: 1.4 },
-  { label: "DSCR Rental", note: "Income-led qualification", className: "right-[0%] top-[8%]", delay: 1.6 },
-  { label: "Ground-Up", note: "Site, plans & schedule", className: "right-[4%] bottom-[18%]", delay: 1.8 },
-  { label: "Multifamily Bridge", note: "Time for the transition", className: "left-[6%] bottom-[10%]", delay: 2.0 },
+// Positions for the floating highlight chips around the 3D city (copy lives in content.ts).
+const chipSlots = [
+  { className: "left-[2%] top-[18%]", delay: 1.4 },
+  { className: "right-[0%] top-[8%]", delay: 1.6 },
+  { className: "right-[4%] bottom-[18%]", delay: 1.8 },
+  { className: "left-[6%] bottom-[10%]", delay: 2.0 },
 ];
+const chips = hero.chips.map((chip, i) => ({ ...chip, ...chipSlots[i % chipSlots.length] }));
 
 export default function Hero() {
   const titleWords = hero.title.split(" ");
@@ -47,7 +49,7 @@ export default function Hero() {
 
           <h1 className="mt-6 text-[2.6rem] leading-[1.02] font-extrabold tracking-[-0.035em] text-navy sm:text-6xl xl:text-[4.6rem]">
             {titleWords.map((word, i) => {
-              const accent = word === "Next" || word === "Move";
+              const accent = hero.accentWords.includes(word);
               return (
                 <span key={i} className="inline-block overflow-hidden pb-[0.1em] align-bottom">
                   <motion.span

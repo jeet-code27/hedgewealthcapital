@@ -11,20 +11,27 @@ export default function Process() {
   const fill = useSpring(scrollYProgress, { stiffness: 90, damping: 24 });
 
   return (
-    <section id="how-it-works" className="relative py-24 lg:py-32">
+    <section id="how-it-works" className="relative scroll-mt-24 py-24 lg:py-32">
       <div className="mx-auto grid max-w-7xl gap-14 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="lg:sticky lg:top-32 lg:self-start">
           <Reveal>
-            <span className="text-sm font-bold tracking-[0.2em] text-leaf-600 uppercase">How It Works</span>
+            <span className="text-sm font-bold tracking-[0.2em] text-leaf-600 uppercase">{process.eyebrow}</span>
           </Reveal>
           <h2 className="mt-4 text-4xl leading-[1.05] font-extrabold tracking-[-0.03em] text-navy sm:text-5xl">
-            <WordsReveal text="From Property Details" />
-            <WordsReveal text="to a Financing Decision" className="font-serif font-normal italic tracking-normal" delay={0.2} />
+            <WordsReveal text="Apply Today and Close" />
+            <WordsReveal text="in 5 to 10 Business Days" className="font-serif font-normal italic tracking-normal" delay={0.2} />
           </h2>
           <Reveal delay={0.15}>
-            <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">
-              Four clear stages, from the first conversation about your property to the closing conditions that come before funding.
-            </p>
+            <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">{process.lead}</p>
+            <a
+              href="#prequalify"
+              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-navy px-7 py-4 font-bold text-white transition hover:-translate-y-0.5 hover:bg-navy-700 sm:w-auto"
+            >
+              Start Your Application
+              <svg className="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden>
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </a>
           </Reveal>
         </div>
 

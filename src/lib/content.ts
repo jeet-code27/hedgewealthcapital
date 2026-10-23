@@ -1,5 +1,6 @@
 /**
- * Homepage copy, taken from content-reference/Hedge_Wealth_Capital_Website_content.docx.
+ * Homepage copy: client-supplied copy (Oct 2026 email), the current hedgewealthcapital.com
+ * homepage, and content-reference/Hedge_Wealth_Capital_Website_content.docx.
  *
  * IMAGES: drop files into /public/images and set the `image` paths below
  * (e.g. "/images/fix-flip.jpg"). Leave `undefined` to show the styled placeholder.
@@ -38,80 +39,158 @@ export const certifications = [
 ];
 
 export const hero = {
-  eyebrow: "Real Estate Investment Financing",
-  title: "Real Estate Investment Loans for Your Next Move",
-  lead: "Buying a property, renovating for resale, building from the ground up, or growing your rental holdings? Start with financing that fits the project you actually plan to execute.",
-  sub: "Explore Hedge Wealth Capital’s loan programs and discuss your property, budget, and timeline with our team.",
-  primaryCta: { label: "Discuss Your Deal", href: "#prequalify" },
-  secondaryCta: { label: "Compare Loan Programs", href: "#loan-programs" },
+  eyebrow: "Limited Documentation – Same-Day Approval",
+  title: "Private Money Loans for Real Estate Investors",
+  accentWords: ["Real", "Estate", "Investors"],
+  lead: "HWC offers a wide variety of no-income-verification loans for your real estate investment needs.",
+  sub: "Fix & flip, ground-up construction, multifamily, and 30-year rental loans, funded with 100% of our own capital.",
+  primaryCta: { label: "Find Out If You Prequalify", href: "#prequalify" },
+  secondaryCta: { label: "Explore Loan Programs", href: "#loan-programs" },
+  chips: [
+    { label: "Up to 100% LTC", note: "Acquisition + rehab" },
+    { label: "Same-Day Approval", note: "Limited documentation" },
+    { label: "10-Day Closings", note: "Get funded fast" },
+    { label: "All 50 States + DC", note: "Lending nationwide" },
+  ],
   disclaimer:
     "Financing is subject to underwriting, property eligibility, program availability, and final loan terms.",
+};
+
+export const marquee = [
+  "Up to 100% LTC",
+  "Same-Day Approval",
+  "10-Day Closings",
+  "Price-Beat Guarantee",
+  "No Tax Returns or W-2s",
+  "30-Year Fixed Rental Loans",
+  "All 50 States + DC",
+  "100% Our Own Capital",
+];
+
+export const ltcPromo = {
+  eyebrow: "Now Offering",
+  value: 100,
+  title: "Up to 100% LTC",
+  lead: "Finance up to 100% of acquisition and rehab costs.",
+  body: "Includes our usual low rates with an option for no upfront points.",
+  callout: {
+    title: "Property under contract?",
+    body: "Contact us ASAP. We will beat any competitor’s loan to keep more cash in your pocket.",
+  },
 };
 
 export const strategies = [
   {
     key: "fixFlip",
-    tag: "Fix & Flip",
-    title: "Buy, Renovate, and Sell",
-    body: "Explore fix-and-flip financing for an investment property that needs improvements before resale. Consider the acquisition, renovation budget, carrying costs, and exit together.",
+    tag: "100% Fix & Flip",
+    title: "Premier Fix & Flip Loan",
+    body: "The fix-to-flip loan for those who want to keep more cash in their pocket. Get 100% of purchase and rehab funds, up to 75% of ARV, including mixed-use properties.",
     link: { label: "Explore Fix & Flip Loans", href: "/loan-programs/fix-flip-loans" },
   },
   {
-    key: "dscr",
-    tag: "DSCR Rental",
-    title: "Purchase or Refinance a Rental",
-    body: "Explore DSCR rental financing, where the property’s rental income is an important part of the qualification process.",
-    link: { label: "Explore DSCR Rental Loans", href: "/loan-programs/rental-loans" },
-  },
-  {
     key: "construction",
-    tag: "Ground-Up Construction",
-    title: "Build a New Residential Project",
-    body: "Discuss construction financing around your site, plans, budget, experience, and completion schedule.",
+    tag: "Ground Up",
+    title: "Construction Loans",
+    body: "The quick, smart, and effective alternative for financing up to 70% ACV with a 90% LTC prior to transitioning into a long-term loan.",
     link: { label: "Explore Construction Loans", href: "/loan-programs/construction-loans" },
   },
   {
     key: "multifamily",
-    tag: "Multifamily Bridge",
-    title: "Improve a Multifamily Property",
-    body: "Explore bridge financing for an acquisition or transition that needs time before a sale or longer-term financing.",
-    link: { label: "Explore Multifamily Bridge Loans", href: "/loan-programs/multifamily-bridge-loans" },
+    tag: "Multifamily",
+    title: "Multifamily Properties Loan",
+    body: "For experienced investors who seek purchase and rehab financing for 5–10 unit properties to maximize market rents. Also available to refinance owned properties for renovation.",
+    link: { label: "Explore Multifamily Loans", href: "/loan-programs/multifamily-bridge-loans" },
+  },
+  {
+    key: "dscr",
+    tag: "30-Year Rental",
+    title: "Rental Refi’s & Purchase",
+    body: "The 30-year fixed-rate loan for investors looking to streamline into a 30-year Debt Service Coverage Ratio (DSCR) loan for rental properties.",
+    link: { label: "Explore Rental Loans", href: "/loan-programs/rental-loans" },
   },
 ];
 
-export const financing = {
-  title: "Understand the Financing Before You Commit",
-  lead: "A useful financing discussion goes beyond the headline rate.",
-  body: "Ask what you will need at closing, how renovation or construction funds are released, what ongoing payments look like, and how the loan ends. Compare the full structure with your budget and intended exit.",
-  closing: "Bring us the project details. Start the conversation with the questions that matter to your investment.",
-  layers: [
-    { label: "At Closing", q: "What will you need at closing?" },
-    { label: "Fund Release", q: "How are renovation or construction funds released?" },
-    { label: "Ongoing Payments", q: "What do ongoing payments look like?" },
-    { label: "Loan Exit", q: "How does the loan end?" },
+export const highlights = {
+  eyebrow: "DSCR Rental Loans",
+  title: "Program Highlights",
+  lead: "Qualify on the property’s rental income: no tax returns, no W-2s, and no employment verification required.",
+  featured: [
+    { value: "80%", label: "Up to LTV" },
+    { value: "30-YR", label: "Fixed rate" },
+    { value: "680+", label: "FICO score" },
+    { value: "10-Day", label: "Closings" },
+  ],
+  items: [
+    "Price-Beat Guarantee",
+    "10-Day Closings",
+    "No Tax Returns, No W-2s and No Employment Required (DSCR Qualification)",
+    "For Cash-Out, Rate & Term, and New Purchases",
+    "Up to 80% LTV",
+    "30-Year Fixed Rate",
+    "No Call, 30-Year Amortization",
+    "$100,000 Minimum Property Value",
+    "680+ FICO Score",
+    "Single-Family, 2–10 Unit Residential, 10+ Units, Mixed-Use and Commercial",
+    "Eligible Entities: Corporations, LLCs and Individuals",
+    "Prepayment Penalty: Declining Points",
   ],
 };
 
 export const process = {
-  title: "From Property Details to a Financing Decision",
+  eyebrow: "How It Works",
+  title: "Apply Today and Close in 5 to 10 Business Days",
+  lead: "Get the money you need in half the time. HWC is the best choice for all your real estate investment private money loan needs.",
   steps: [
-    { title: "Share the Opportunity", body: "Tell us where the property is, what you plan to do, and when financing is needed." },
-    { title: "Review the Requirements", body: "Discuss the appropriate program, supporting documents, and issues that may affect eligibility." },
-    { title: "Evaluate the Proposed Terms", body: "Review any proposed pricing, fees, conditions, and cash requirements before deciding whether to proceed." },
-    { title: "Complete the Closing Requirements", body: "Funding follows final approval and completion of the applicable closing conditions." },
+    { title: "Tell Us Your Story", body: "Share your property, your plan, and your timeline with our team." },
+    { title: "Apply in Minutes", body: "Apply in minutes with just a few documents. No complicated forms." },
+    { title: "Get Approved the Same Day", body: "Receive your approval the same day, then close in 5 to 10 business days." },
   ],
 };
 
-export const compare = {
-  title: "Find the Financing That Fits Your Property Strategy",
-  lead: "The right starting point depends on what happens after you buy: renovate and sell, lease and hold, build, or reposition.",
-  rows: [
-    { program: "Fix & Flip", objective: "Improve a property for resale", points: "Purchase, renovation budget, expected value, and sale timeline" },
-    { program: "DSCR Rental", objective: "Purchase or refinance an income property", points: "Rent, housing expenses, credit, equity, and holding strategy" },
-    { program: "Ground-Up Construction", objective: "Develop a residential project", points: "Land, approvals, plans, budget, builder, and completion" },
-    { program: "Multifamily Bridge", objective: "Acquire or improve a property during transition", points: "Occupancy, operating performance, renovation, and exit" },
+export const whyHwc = {
+  eyebrow: "Why Choose HWC?",
+  title: "HWC Is Invested in Your Success",
+  body: "Whether you’re looking for a Fix-to-Flip or Fix-to-Rent loan, we evaluate borrowers as a whole and match your specific goals to a loan with the term that’s right for you. Other hard money lenders stick to hard-and-fast formulas. We review your full financial picture and use common-sense underwriting to make our decision.",
+  benefits: [
+    { icon: "phone", title: "Instant Information", body: "Call to price your loan in minutes." },
+    { icon: "bolt", title: "Responsive Service", body: "Receive same-day loan approval." },
+    { icon: "clock", title: "Fast Funding", body: "Loans close in 5 to 10 business days." },
+    { icon: "percent", title: "Competitive Rates", body: "Contact us for your rate. Repeat borrowers save more." },
+    { icon: "shield", title: "Easy Underwriting", body: "We make all underwriting decisions ourselves." },
+    { icon: "doc", title: "Simple Application", body: "No complicated forms. Limited documentation requirements." },
+    { icon: "wallet", title: "Keep More Cash", body: "Every loan is structured so you keep more of your money for your project." },
+    { icon: "bank", title: "Industry-Leading Lender", body: "We fund loans with 100% of our own capital." },
   ],
-  note: "A lower advertised rate does not necessarily produce a lower total cost. Review origination charges, third-party expenses, draw fees, interest calculations, extension terms, and prepayment provisions.",
+};
+
+export const about = {
+  eyebrow: "About Hedge Wealth Capital",
+  title: "A Lender Built by Investors, for Investors",
+  paragraphs: [
+    "Founded in 2010, Hedge Wealth Capital is a privately owned real estate financing firm known for speed, reliability, and exceptional service. With a dedicated team of 25 professionals based in Boston, Massachusetts, we serve investors nationwide, covering all 50 states and Washington, D.C.",
+    "We offer a comprehensive suite of real estate investment financing solutions, including Ground-Up Construction, Multifamily Bridge Loans, Fix & Flip, and 15-Year Rental Loans.",
+    "As real estate investors ourselves, we understand the challenges you face. With a portfolio of 275 properties under management, we created a lender specifically for investors, designed by investors who know the market, the risks, and the opportunities.",
+  ],
+  stats: [
+    { value: 2010, prefix: "", suffix: "", label: "Founded", plain: true },
+    { value: 50, prefix: "", suffix: " + DC", label: "States served" },
+    { value: 25, prefix: "", suffix: "", label: "Dedicated professionals" },
+    { value: 275, prefix: "", suffix: "", label: "Properties under management" },
+  ],
+  link: { label: "More About HWC", href: "/about-hedge-wealth-capital" },
+};
+
+export const broker = {
+  eyebrow: "Broker Program",
+  title: "Partner With Hedge Wealth Capital",
+  body: "Our Broker Program is designed to complement the expertise of top-tier real estate brokers and expand loan offerings to investors nationwide. With a focus on speed, service, and reliability, Hedge Wealth Capital has funded over 9,000 projects totaling more than $2 billion in loan originations. Partner with us and experience the Hedge Wealth Capital difference today.",
+  stats: [
+    { value: 9000, prefix: "", suffix: "+", label: "Projects funded" },
+    { value: 2, prefix: "$", suffix: "B+", label: "In loan originations" },
+  ],
+  points: ["Full DSCR Market Access", "100% White-Label Service", "DSCR, Bridge & Non-QM Access"],
+  cta: { label: "Partner With Us", href: "/brokers" },
+  deal: "Have a specific deal in mind? Call to price it out today.",
 };
 
 export const faqs = [
@@ -135,7 +214,7 @@ export const faqs = [
 
 export const footer = {
   brand:
-    "Real estate investment financing for acquisition, renovation, rental ownership, construction, and multifamily transitions.",
+    "Private money loans for real estate investors: fix & flip, ground-up construction, multifamily, and 30-year rental loans in all 50 states.",
   disclosure:
     "Website information is for general informational purposes and is not a commitment to lend. Financing is subject to underwriting, eligibility, availability, and final documentation. Rates, fees, leverage, terms, and conditions vary by transaction. Examples and calculations are illustrative and do not guarantee approval, investment performance, or future financing.",
   legal: [
@@ -148,14 +227,14 @@ export const footer = {
 export const prequalify = {
   eyebrow: "Find Out If You Prequalify",
   title: "Have a Property in Mind?",
-  body: "Tell us what you are buying, building, or refinancing—and what needs to happen next.",
+  body: "Just 5 minutes is all it takes to prequalify with HWC. Call or complete the form today.",
   points: [
-    "Share the property, plan, and timeline",
-    "Discuss the program that fits your strategy",
-    "Review requirements before you commit",
+    "Provide your contact information",
+    "Answer a few simple questions",
+    "Get your prequalification for an investment loan",
   ],
   loanProducts: ["Fix & Flip", "DSCR Rental", "Ground-Up Construction", "Multifamily Bridge", "Not sure yet"],
-  referralSources: ["Google Search", "Referral", "Broker", "Social Media", "Event", "Other"],
+  referralSources: ["Builder Online", "BiggerPockets", "Direct Mail", "Event", "Facebook", "LinkedIn", "Referred", "RIR Podcast", "Think Realty", "Web Search", "Other"],
   helper:
     "Please do not include Social Security numbers, bank account numbers, identification documents, or other sensitive financial information in this inquiry form.",
   consent:
