@@ -48,7 +48,7 @@ export default function GlossarySlider() {
             <Reveal>
               <span className="text-sm font-bold tracking-[0.2em] text-leaf-600 uppercase">{glossary.eyebrow}</span>
             </Reveal>
-            <h2 className="mt-4 max-w-3xl text-4xl leading-[1.05] font-extrabold tracking-[-0.03em] text-navy sm:text-5xl">
+            <h2 className="mt-4 max-w-3xl text-[2.05rem] leading-[1.05] font-extrabold tracking-[-0.03em] text-navy sm:text-5xl">
               <WordsReveal text="Understand the Financing" />
               <WordsReveal text="Behind the Investment" className="font-serif font-normal italic tracking-normal" delay={0.15} />
             </h2>

@@ -18,7 +18,7 @@ export default function Broker() {
             <Reveal>
               <span className="text-sm font-bold tracking-[0.2em] text-leaf uppercase">{broker.eyebrow}</span>
             </Reveal>
-            <h2 className="mt-4 text-4xl leading-[1.05] font-extrabold tracking-[-0.03em] sm:text-5xl">
+            <h2 className="mt-4 text-[2.05rem] leading-[1.05] font-extrabold tracking-[-0.03em] sm:text-5xl">
               <WordsReveal text="Partner With" />
               <WordsReveal text="Hedge Wealth Capital" className="font-serif font-normal italic tracking-normal text-leaf" delay={0.15} />
             </h2>

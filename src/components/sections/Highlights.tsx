@@ -8,17 +8,17 @@ import { highlights } from "@/lib/content";
 function Layer({ index, total, progress, value, label }: { index: number; total: number; progress: MotionValue<number>; value: string; label: string }) {
   // Layers start stacked and fan apart in 3D as the section scrolls through.
   const fromTop = total - 1 - index;
-  const z = useTransform(progress, [0.05, 0.45], [fromTop * 18, fromTop * 86]);
+  const z = useTransform(progress, [0.05, 0.45], [fromTop * 16, fromTop * 70]);
   const start = index / total;
   const border = useTransform(progress, [0.12 + start * 0.3, 0.25 + start * 0.3], ["rgb(255 255 255 / 0.15)", "rgb(122 198 68 / 0.9)"]);
 
   return (
     <motion.div
       style={{ translateZ: z, borderColor: border }}
-      className="absolute inset-0 flex items-center justify-between rounded-3xl border-2 bg-gradient-to-br from-navy-700 to-navy-900 px-7 shadow-[0_30px_60px_-20px_rgb(0_0_0/0.6)]"
+      className="absolute inset-0 flex items-center justify-between gap-4 rounded-3xl border-2 bg-gradient-to-br from-navy-700 to-navy-900 px-6 shadow-[0_30px_60px_-20px_rgb(0_0_0/0.6)] sm:px-7"
     >
-      <span className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">{value}</span>
-      <span className="text-right text-xs font-bold tracking-[0.18em] text-leaf uppercase">{label}</span>
+      <span className="text-3xl font-extrabold tracking-tight whitespace-nowrap text-white sm:text-5xl">{value}</span>
+      <span className="text-right text-[11px] font-bold tracking-[0.16em] whitespace-nowrap text-leaf uppercase sm:text-xs">{label}</span>
     </motion.div>
   );
 }
@@ -39,7 +39,7 @@ export default function Highlights() {
           <Reveal>
             <span className="text-sm font-bold tracking-[0.2em] text-leaf uppercase">{highlights.eyebrow}</span>
           </Reveal>
-          <h2 className="mt-4 text-4xl leading-[1.05] font-extrabold tracking-[-0.03em] sm:text-5xl lg:text-6xl">
+          <h2 className="mt-4 text-[2.05rem] leading-[1.05] font-extrabold tracking-[-0.03em] sm:text-5xl lg:text-6xl">
             <WordsReveal text="Program" />
             <WordsReveal text="Highlights" className="font-serif font-normal italic tracking-normal text-leaf" delay={0.1} />
           </h2>
@@ -47,10 +47,10 @@ export default function Highlights() {
             <p className="mt-6 max-w-md text-lg leading-relaxed text-white/75">{highlights.lead}</p>
           </Reveal>
 
-          <div className="relative mx-auto mt-6 h-[360px] w-full max-w-md [perspective:1400px] sm:h-[400px]">
+          <div className="relative mx-auto mt-10 h-[270px] w-full max-w-md [perspective:1400px] sm:mt-14 sm:h-[310px]">
             <motion.div
               style={{ rotateX: 58, rotateZ: rotate }}
-              className="absolute inset-x-6 top-1/2 h-36 -translate-y-1/2 [transform-style:preserve-3d] sm:h-40"
+              className="absolute inset-x-4 bottom-0 h-32 [transform-style:preserve-3d] sm:inset-x-6 sm:h-36"
             >
               {highlights.featured.map((f, i) => (
                 <Layer key={f.label} index={i} total={highlights.featured.length} progress={scrollYProgress} value={f.value} label={f.label} />

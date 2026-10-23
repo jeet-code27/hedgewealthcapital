@@ -263,7 +263,7 @@ export default function Prequalify() {
                 {prequalify.eyebrow}
               </span>
             </Reveal>
-            <h2 className="mt-6 text-4xl leading-[1.02] font-extrabold tracking-[-0.03em] sm:text-6xl">
+            <h2 className="mt-6 text-[2.05rem] leading-[1.02] font-extrabold tracking-[-0.03em] sm:text-6xl">
               <WordsReveal text="Have a Property" />
               <WordsReveal text="in Mind?" className="font-serif font-normal italic tracking-normal text-leaf" delay={0.15} />
             </h2>
@@ -287,9 +287,9 @@ export default function Prequalify() {
               <PrequalifyScene />
             </div>
 
-            <a href={contact.phoneHref} className="mt-2 inline-flex w-full items-center justify-center gap-3 rounded-2xl sm:w-auto sm:self-start border border-white/15 bg-white/5 px-5 py-3 backdrop-blur transition hover:bg-white/10">
-              <span className="text-sm text-white/60">Prefer to talk?</span>
-              <span className="font-extrabold">{contact.phone}</span>
+            <a href={contact.phoneHref} className="mt-2 inline-flex w-full flex-wrap items-center justify-center gap-x-3 gap-y-1 rounded-2xl border border-white/15 bg-white/5 px-4 py-3 backdrop-blur transition hover:bg-white/10 sm:w-auto sm:self-start sm:px-5">
+              <span className="text-sm whitespace-nowrap text-white/60">Prefer to talk?</span>
+              <span className="font-extrabold whitespace-nowrap">{contact.phone}</span>
             </a>
           </div>
 

@@ -15,7 +15,7 @@ export default function Faq() {
           <Reveal>
             <span className="text-sm font-bold tracking-[0.2em] text-leaf-600 uppercase">FAQ</span>
           </Reveal>
-          <h2 className="mt-4 text-4xl leading-[1.05] font-extrabold tracking-[-0.03em] text-navy sm:text-5xl">
+          <h2 className="mt-4 text-[2.05rem] leading-[1.05] font-extrabold tracking-[-0.03em] text-navy sm:text-5xl">
             <WordsReveal text="Frequently Asked" />
             <WordsReveal text="Questions" className="font-serif font-normal italic tracking-normal" delay={0.15} />
           </h2>

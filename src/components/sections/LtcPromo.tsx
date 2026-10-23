@@ -63,7 +63,7 @@ export default function LtcPromo() {
                 </span>
               </Reveal>
               <Reveal delay={0.05}>
-                <h2 className="mt-5 text-4xl leading-[1.02] font-extrabold tracking-[-0.03em] text-navy sm:text-6xl">
+                <h2 className="mt-5 text-[2.05rem] leading-[1.02] font-extrabold tracking-[-0.03em] text-navy sm:text-6xl">
                   Up to <span className="font-serif font-normal italic tracking-normal text-leaf-600">100%</span> LTC
                 </h2>
                 <p className="mt-6 text-xl font-bold text-ink">{ltcPromo.lead}</p>
@@ -89,17 +89,24 @@ export default function LtcPromo() {
               </Reveal>
 
               <Reveal delay={0.15}>
-                <div className="mt-8 flex items-start gap-4 rounded-3xl bg-navy p-5 text-white shadow-[0_24px_50px_-25px_rgb(25_40_97/0.8)] sm:p-6">
-                  <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-leaf text-navy shadow-[inset_0_-4px_8px_rgb(0_0_0/0.15)]">
-                    <svg className="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden>
-                      <path d="M12 2l3 6 6 .9-4.5 4.4 1 6.3L12 16.8 6.5 19.6l1-6.3L3 8.9 9 8z" />
-                    </svg>
-                  </span>
-                  <div>
+                <div className="relative mt-8 overflow-hidden rounded-3xl bg-navy p-5 text-white shadow-[0_24px_50px_-25px_rgb(25_40_97/0.8)] sm:p-6">
+                  <span className="pointer-events-none absolute -top-10 -right-10 size-32 rounded-full border-[14px] border-white/5" />
+                  <div className="flex items-center gap-3">
+                    <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-leaf text-navy shadow-[inset_0_-3px_6px_rgb(0_0_0/0.15)]">
+                      <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden>
+                        <path d="M12 2l3 6 6 .9-4.5 4.4 1 6.3L12 16.8 6.5 19.6l1-6.3L3 8.9 9 8z" />
+                      </svg>
+                    </span>
                     <p className="text-xs font-bold tracking-[0.2em] text-leaf uppercase">Price-Beat Guarantee</p>
-                    <p className="mt-1 text-lg font-extrabold">{ltcPromo.callout.title}</p>
-                    <p className="mt-1 text-sm leading-relaxed text-white/70">{ltcPromo.callout.body}</p>
                   </div>
+                  <p className="mt-4 text-xl font-extrabold">{ltcPromo.callout.title}</p>
+                  <p className="mt-1.5 text-[15px] leading-relaxed text-white/75">{ltcPromo.callout.body}</p>
+                  <a href={contact.phoneHref} className="mt-4 inline-flex items-center gap-2 text-sm font-extrabold text-leaf">
+                    Call {contact.phone}
+                    <svg className="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden>
+                      <path d="M5 12h14M13 5l7 7-7 7" />
+                    </svg>
+                  </a>
                 </div>
               </Reveal>
             </div>
