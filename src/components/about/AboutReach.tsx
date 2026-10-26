@@ -14,7 +14,7 @@ export default function AboutReach() {
       <div className="absolute top-1/2 left-1/4 -z-10 size-[520px] -translate-y-1/2 rounded-full bg-leaf/15 blur-[120px]" />
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 sm:px-8 lg:grid-cols-2 lg:gap-16">
         <div className="relative order-2 aspect-square w-full max-w-[560px] justify-self-center lg:order-1">
-          <div className="absolute inset-[10%] rounded-full bg-gradient-to-br from-navy-100 via-white to-leaf-100 blur-2xl" />
+          <div className="absolute inset-[14%] rounded-full bg-gradient-to-br from-navy/40 via-leaf/30 to-navy/20 blur-3xl" />
           <GlobeScene />
           <span className="pointer-events-none absolute bottom-2 left-1/2 hidden -translate-x-1/2 rounded-full border border-navy/10 bg-white/80 px-3 py-1 text-xs font-semibold text-muted backdrop-blur [@media(pointer:fine)]:inline-block">
             Drag to spin the globe

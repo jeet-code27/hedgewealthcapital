@@ -48,8 +48,9 @@ export default function GroupExplorer() {
 
         <div className="mt-14 grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
           {/* Selector: stacked like floors of one building */}
-          <div role="tablist" aria-label="Hedge Wealth Group companies" className="relative flex flex-col gap-3">
-            <div className="absolute top-8 bottom-8 left-[2.5rem] w-0.5 -translate-x-1/2 bg-gradient-to-b from-leaf/60 via-white/15 to-leaf/60 sm:left-[3rem]" aria-hidden />
+          <div role="tablist" aria-label="Hedge Wealth Group companies" className="relative flex flex-col gap-3 self-start">
+            {/* Connector runs from the first icon centre to the last (border + padding + half icon). */}
+            <div className="absolute top-[41px] bottom-[41px] left-[41px] w-0.5 -translate-x-1/2 bg-gradient-to-b from-leaf via-leaf/30 to-leaf sm:top-[49px] sm:bottom-[49px] sm:left-[49px]" aria-hidden />
             {aboutGroup.companies.map((c, i) => {
               const isActive = i === active;
               return (
@@ -61,14 +62,14 @@ export default function GroupExplorer() {
                   onMouseEnter={() => setActive(i)}
                   className={`relative flex items-center gap-4 rounded-3xl border p-4 text-left transition-all duration-300 sm:p-5 ${
                     isActive
-                      ? "translate-x-1 border-leaf/70 bg-white/[0.1] shadow-[0_20px_40px_-20px_rgb(0_0_0/0.6)] sm:translate-x-3"
+                      ? "border-leaf/70 bg-white/[0.1] shadow-[0_20px_40px_-20px_rgb(0_0_0/0.6),0_0_0_4px_rgb(122_198_68/0.12)]"
                       : "border-white/10 bg-white/[0.03] hover:bg-white/[0.06]"
                   }`}
                 >
                   <span
-                    className={`relative z-10 grid size-12 shrink-0 place-items-center rounded-2xl transition-colors duration-300 sm:size-14 ${
-                      isActive ? "bg-leaf text-navy" : "bg-navy-700 text-leaf"
-                    } shadow-[inset_0_-4px_8px_rgb(0_0_0/0.25)]`}
+                    className={`relative z-10 grid size-12 shrink-0 place-items-center rounded-2xl transition-all duration-300 sm:size-14 ${
+                      isActive ? "scale-105 bg-leaf text-navy shadow-[0_0_24px_rgb(122_198_68/0.55)]" : "bg-navy-700 text-leaf shadow-[inset_0_-4px_8px_rgb(0_0_0/0.25)]"
+                    }`}
                   >
                     <svg className="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                       {icons[c.key]}
