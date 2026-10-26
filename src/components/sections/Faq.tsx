@@ -5,7 +5,9 @@ import { AnimatePresence, motion } from "motion/react";
 import Reveal, { WordsReveal } from "@/components/Reveal";
 import { contact, faqs } from "@/lib/content";
 
-export default function Faq() {
+type FaqItem = { q: string; a: string };
+
+export default function Faq({ items = faqs }: { items?: FaqItem[] }) {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
@@ -34,7 +36,7 @@ export default function Faq() {
         </div>
 
         <div className="divide-y divide-navy/10 border-y border-navy/10">
-          {faqs.map((f, i) => {
+          {items.map((f, i) => {
             const isOpen = open === i;
             return (
               <Reveal key={f.q} delay={i * 0.06} y={16}>
