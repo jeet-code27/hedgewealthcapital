@@ -1,4 +1,5 @@
 import { prequalify } from "@/lib/content";
+import { deliverInquiry, EMAIL } from "@/lib/inquiry";
 
 type Inquiry = {
   firstName: string;
@@ -8,8 +9,6 @@ type Inquiry = {
   loanProduct: string;
   referralSource: string;
 };
-
-const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function validate(body: Partial<Inquiry>): Record<string, string> {
   const errors: Record<string, string> = {};
@@ -22,13 +21,7 @@ function validate(body: Partial<Inquiry>): Record<string, string> {
   return errors;
 }
 
-/**
- * Receives homepage prequalify inquiries.
- *
- * Set INQUIRY_WEBHOOK_URL (CRM, Zapier, email service, etc.) to deliver submissions.
- * Without it, development logs the inquiry; production reports failure so users are
- * never told an inquiry was received when it wasn't.
- */
+/** Receives homepage prequalify inquiries. */
 export async function POST(request: Request) {
   let body: Partial<Inquiry>;
   try {
@@ -42,23 +35,5 @@ export async function POST(request: Request) {
     return Response.json({ ok: false, errors }, { status: 422 });
   }
 
-  const inquiry = { ...body, submittedAt: new Date().toISOString(), source: "homepage-prequalify" };
-  const webhook = process.env.INQUIRY_WEBHOOK_URL;
-
-  if (webhook) {
-    const res = await fetch(webhook, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(inquiry),
-    });
-    if (!res.ok) return Response.json({ ok: false }, { status: 502 });
-    return Response.json({ ok: true });
-  }
-
-  if (process.env.NODE_ENV !== "production") {
-    console.log("[prequalify] inquiry (no INQUIRY_WEBHOOK_URL set):", inquiry);
-    return Response.json({ ok: true });
-  }
-
-  return Response.json({ ok: false }, { status: 503 });
+  return deliverInquiry("homepage-prequalify", body);
 }
