@@ -30,7 +30,7 @@ export default function Navbar() {
         }`}
       >
         <Link href="/" className="flex items-center gap-2.5" aria-label="Hedge Wealth Capital home">
-          <Image src="/images/hwc-logo.png" alt="Hedge Wealth Capital" width={1536} height={760} className="h-14 w-auto sm:h-16" preload />
+          <Image src="/images/hwc-logo-header.png" alt="Hedge Wealth Capital" width={1642} height={748} className="h-14 w-auto sm:h-16" preload />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
@@ -40,7 +40,7 @@ export default function Navbar() {
               <div key={item.label} className="group/menu relative">
                 <Link
                   href={item.href}
-                  className="group relative inline-flex items-center gap-1 rounded-lg px-3.5 py-2 text-[14px] font-semibold text-navy/80 transition-colors hover:text-navy"
+                  className="group relative inline-flex items-center gap-1 rounded-lg px-3.5 py-2 text-[14px] font-bold text-navy transition-colors hover:text-navy"
                 >
                   {item.label}
                   <svg className="size-3.5 transition-transform duration-300 group-hover/menu:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden>
@@ -67,7 +67,7 @@ export default function Navbar() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="group relative rounded-lg px-3.5 py-2 text-[14px] font-semibold text-navy/80 transition-colors hover:text-navy"
+                className="group relative rounded-lg px-3.5 py-2 text-[14px] font-bold text-navy transition-colors hover:text-navy"
               >
                 {item.label}
                 <span className="absolute inset-x-3.5 bottom-1 h-0.5 origin-left scale-x-0 rounded bg-leaf transition-transform duration-300 group-hover:scale-x-100" />
@@ -114,7 +114,7 @@ export default function Navbar() {
                 <Link
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded-lg px-3 py-3 font-semibold text-navy hover:bg-navy-50"
+                  className="block rounded-lg px-3 py-3 font-bold text-navy hover:bg-navy-50"
                 >
                   {item.label}
                 </Link>
@@ -125,7 +125,7 @@ export default function Navbar() {
                         key={s.slug}
                         href={s.path}
                         onClick={() => setOpen(false)}
-                        className="flex items-center gap-2 rounded-lg px-2 py-2 text-[15px] font-semibold text-navy/80 hover:bg-navy-50"
+                        className="flex items-center gap-2 rounded-lg px-2 py-2 text-[15px] font-bold text-navy/85 hover:bg-navy-50"
                       >
                         <ServiceIcon icon={s.icon} className="size-4 text-leaf-600" />
                         {s.name}
