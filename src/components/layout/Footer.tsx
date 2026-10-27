@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { certifications, contact, footer, nav, strategies } from "@/lib/content";
+import { certifications, contact, footer, nav } from "@/lib/content";
+import { services } from "@/lib/services";
 
 async function CopyrightYear() {
   "use cache";
@@ -27,10 +28,10 @@ export default function Footer() {
           <div>
             <p className="text-xs font-bold tracking-[0.2em] text-leaf uppercase">Loan Programs</p>
             <ul className="mt-5 space-y-3">
-              {strategies.map((s) => (
-                <li key={s.key}>
-                  <Link href={s.link.href} className="text-white/70 transition hover:text-white">
-                    {s.tag}
+              {services.map((s) => (
+                <li key={s.slug}>
+                  <Link href={s.path} className="text-white/70 transition hover:text-white">
+                    {s.name}
                   </Link>
                 </li>
               ))}

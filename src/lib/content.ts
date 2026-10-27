@@ -85,28 +85,28 @@ export const strategies = [
     tag: "100% Fix & Flip",
     title: "Premier Fix & Flip Loan",
     body: "The fix-to-flip loan for those who want to keep more cash in their pocket. Get 100% of purchase and rehab funds, up to 75% of ARV, including mixed-use properties.",
-    link: { label: "Explore Fix & Flip Loans", href: "/loan-programs/fix-flip-loans" },
+    link: { label: "Explore Hard Money Loans", href: "/hard-money-loans" },
   },
   {
     key: "construction",
     tag: "Ground Up",
     title: "Construction Loans",
     body: "The quick, smart, and effective alternative for financing up to 70% ACV with a 90% LTC prior to transitioning into a long-term loan.",
-    link: { label: "Explore Construction Loans", href: "/loan-programs/construction-loans" },
+    link: { label: "Explore Construction Financing", href: "/bridge-loans#construction-bridge" },
   },
   {
     key: "multifamily",
     tag: "Multifamily",
     title: "Multifamily Properties Loan",
     body: "For experienced investors who seek purchase and rehab financing for 5–10 unit properties to maximize market rents. Also available to refinance owned properties for renovation.",
-    link: { label: "Explore Multifamily Loans", href: "/loan-programs/multifamily-bridge-loans" },
+    link: { label: "Explore Bridge Loans", href: "/bridge-loans" },
   },
   {
     key: "dscr",
     tag: "30-Year Rental",
     title: "Rental Refi’s & Purchase",
     body: "The 30-year fixed-rate loan for investors looking to streamline into a 30-year Debt Service Coverage Ratio (DSCR) loan for rental properties.",
-    link: { label: "Explore Rental Loans", href: "/loan-programs/rental-loans" },
+    link: { label: "Explore DSCR Loans", href: "/dscr-loans" },
   },
 ];
 

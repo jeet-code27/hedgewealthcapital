@@ -15,7 +15,7 @@ export default function LtcPromo() {
   const ry = useSpring(useMotionValue(0), { stiffness: 120, damping: 16 });
 
   return (
-    <section className="relative overflow-hidden py-20 lg:py-28">
+    <section className="relative overflow-hidden pt-14 pb-4 sm:pt-20 lg:pt-28 lg:pb-8">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="relative overflow-hidden rounded-[36px] border border-navy/10 bg-gradient-to-br from-white via-navy-50 to-leaf-100 px-6 py-14 shadow-[0_40px_80px_-50px_rgb(25_40_97/0.6)] sm:px-12 lg:py-20">
           <div className="bg-grid absolute inset-0 opacity-70" />

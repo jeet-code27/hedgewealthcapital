@@ -39,7 +39,7 @@ function TiltCard({ children, className = "" }: { children: React.ReactNode; cla
 
 export default function Strategies() {
   return (
-    <section id="loan-programs" className="relative scroll-mt-24 py-24 lg:py-32">
+    <section id="loan-programs" className="relative scroll-mt-24 pt-14 pb-20 sm:pt-16 lg:pt-20 lg:pb-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
           <div>
