@@ -7,6 +7,16 @@ import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/
 import { contact, nav } from "@/lib/content";
 import { services } from "@/lib/services";
 import ServiceIcon from "@/components/service/ServiceIcon";
+import { MapSilhouette } from "@/components/area/AreaMap";
+import { areas } from "@/lib/areas";
+
+type MenuItem = { href: string; title: string; sub: string; icon: React.ReactNode };
+
+// Dropdown contents for nav items that open a menu.
+const menus: Record<string, MenuItem[]> = {
+  "Loan Programs": services.map((s) => ({ href: s.path, title: s.name, sub: s.tag, icon: <ServiceIcon icon={s.icon} className="size-5" /> })),
+  Areas: areas.map((a) => ({ href: a.path, title: a.region, sub: `${a.kind} Loans`, icon: <MapSilhouette map={a.map} className="size-6" /> })),
+};
 
 export default function Navbar() {
   const { scrollY } = useScroll();
@@ -23,9 +33,10 @@ export default function Navbar() {
       className="fixed inset-x-0 top-0 z-50 px-4 pt-3 sm:px-6"
     >
       <div
-        className={`mx-auto flex max-w-7xl items-center justify-between rounded-2xl px-4 py-2.5 transition-all duration-500 sm:px-5 ${
+        // Pages that open on a navy hero mark it with data-dark-hero; the bar is solid there from the start.
+        className={`mx-auto flex max-w-7xl items-center justify-between rounded-2xl px-4 py-2.5 transition-all duration-500 sm:px-5 [body:has([data-dark-hero])_&]:border-navy/10 [body:has([data-dark-hero])_&]:bg-white/85 [body:has([data-dark-hero])_&]:shadow-[0_10px_40px_-12px_rgb(25_40_97/0.35)] [body:has([data-dark-hero])_&]:backdrop-blur-xl ${
           scrolled
-            ? "border border-navy/10 bg-white/75 shadow-[0_10px_40px_-12px_rgb(25_40_97/0.25)] backdrop-blur-xl"
+            ? "border border-navy/10 bg-white/85 shadow-[0_10px_40px_-12px_rgb(25_40_97/0.25)] backdrop-blur-xl"
             : "border border-transparent bg-transparent"
         }`}
       >
@@ -35,8 +46,8 @@ export default function Navbar() {
 
         <nav className="hidden items-center gap-1 lg:flex">
           {nav.map((item) =>
-            item.label === "Loan Programs" ? (
-              // Hover/focus dropdown listing every service page.
+            menus[item.label] ? (
+              // Hover/focus dropdown listing the pages behind this item.
               <div key={item.label} className="group/menu relative">
                 <Link
                   href={item.href}
@@ -49,14 +60,14 @@ export default function Navbar() {
                 </Link>
                 <div className="invisible absolute top-full -left-4 w-[560px] translate-y-2 pt-3 opacity-0 transition-all duration-300 group-focus-within/menu:visible group-focus-within/menu:translate-y-0 group-focus-within/menu:opacity-100 group-hover/menu:visible group-hover/menu:translate-y-0 group-hover/menu:opacity-100">
                   <div className="grid grid-cols-2 gap-1 rounded-3xl border border-navy/10 bg-white/95 p-3 shadow-[0_30px_60px_-20px_rgb(25_40_97/0.35)] backdrop-blur-xl">
-                    {services.map((s) => (
-                      <Link key={s.slug} href={s.path} className="group/item flex items-center gap-3 rounded-2xl p-3 transition hover:bg-navy-50">
+                    {menus[item.label].map((m) => (
+                      <Link key={m.href} href={m.href} className="group/item flex items-center gap-3 rounded-2xl p-3 transition hover:bg-navy-50">
                         <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-navy text-leaf transition-colors group-hover/item:bg-leaf group-hover/item:text-navy">
-                          <ServiceIcon icon={s.icon} className="size-5" />
+                          {m.icon}
                         </span>
                         <span>
-                          <span className="block text-[14px] font-extrabold text-navy">{s.name}</span>
-                          <span className="block text-xs font-medium text-muted">{s.tag}</span>
+                          <span className="block text-[14px] font-extrabold text-navy">{m.title}</span>
+                          <span className="block text-xs font-medium text-muted">{m.sub}</span>
                         </span>
                       </Link>
                     ))}
@@ -118,17 +129,17 @@ export default function Navbar() {
                 >
                   {item.label}
                 </Link>
-                {item.label === "Loan Programs" && (
+                {menus[item.label] && (
                   <div className="mb-2 ml-3 grid gap-0.5 border-l-2 border-leaf/40 pl-3">
-                    {services.map((s) => (
+                    {menus[item.label].map((m) => (
                       <Link
-                        key={s.slug}
-                        href={s.path}
+                        key={m.href}
+                        href={m.href}
                         onClick={() => setOpen(false)}
                         className="flex items-center gap-2 rounded-lg px-2 py-2 text-[15px] font-bold text-navy/85 hover:bg-navy-50"
                       >
-                        <ServiceIcon icon={s.icon} className="size-4 text-leaf-600" />
-                        {s.name}
+                        <span className="grid size-5 shrink-0 place-items-center text-leaf-600 [&_svg]:size-4">{m.icon}</span>
+                        {item.label === "Areas" ? `${m.title} · ${m.sub.replace(" Loans", "")}` : m.title}
                       </Link>
                     ))}
                   </div>

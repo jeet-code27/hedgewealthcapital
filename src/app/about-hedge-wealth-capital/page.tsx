@@ -12,6 +12,7 @@ import { aboutFaqs, aboutMeta } from "@/lib/about-content";
 export const metadata: Metadata = {
   title: aboutMeta.title,
   description: aboutMeta.description,
+  alternates: { canonical: "/about-hedge-wealth-capital" },
 };
 
 export default function AboutPage() {

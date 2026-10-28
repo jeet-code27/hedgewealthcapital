@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { certifications, contact, footer, nav } from "@/lib/content";
 import { services } from "@/lib/services";
+import { areas } from "@/lib/areas";
 
 async function CopyrightYear() {
   "use cache";
@@ -13,7 +14,7 @@ export default function Footer() {
     <footer className="relative overflow-hidden bg-navy-950 pt-20 pb-10 text-white">
       <div className="bg-grid-dark absolute inset-0 opacity-50" />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr_1.2fr]">
           <div>
             <Image
               src="/images/hwc-logo.png"
@@ -32,6 +33,19 @@ export default function Footer() {
                 <li key={s.slug}>
                   <Link href={s.path} className="text-white/70 transition hover:text-white">
                     {s.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <p className="text-xs font-bold tracking-[0.2em] text-leaf uppercase">Areas We Serve</p>
+            <ul className="mt-5 space-y-3">
+              {areas.map((a) => (
+                <li key={a.slug}>
+                  <Link href={a.path} className="text-white/70 transition hover:text-white">
+                    {a.region} {a.kind === "Hard Money & DSCR" ? "Lending" : a.kind === "DSCR" ? "DSCR Loans" : "Hard Money"}
                   </Link>
                 </li>
               ))}
