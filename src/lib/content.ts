@@ -17,7 +17,7 @@ export const nav = [
   { label: "Loan Programs", href: "/#loan-programs" },
   { label: "Areas", href: "/areas-we-serve" },
   { label: "Brokers", href: "/brokers" },
-  { label: "Resources", href: "/resources" },
+  { label: "Blog", href: "/blog" },
   { label: "About", href: "/about-hedge-wealth-capital" },
   { label: "Contact", href: "/contact-us" },
 ];

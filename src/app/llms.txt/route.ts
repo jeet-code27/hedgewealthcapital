@@ -1,4 +1,5 @@
 import { areas } from "@/lib/areas";
+import { posts } from "@/lib/blog";
 import { contact } from "@/lib/content";
 import { services } from "@/lib/services";
 import { site } from "@/lib/site";
@@ -23,6 +24,8 @@ Contact: ${contact.phone} · ${contact.email} · ${contact.address}
 - [About Hedge Wealth Capital](${url("/about-hedge-wealth-capital")}): Company history, the Hedge Wealth Group and lending footprint
 - [Contact](${url("/contact-us")}): Phone, email, office and deal inquiry form
 - [Areas We Serve](${url("/areas-we-serve")}): Local lending pages by market
+- [Brokers](${url("/brokers")}): Broker partner program and application
+- [Blog](${url("/blog")}): Company news and product updates
 
 ## Loan programs
 
@@ -31,6 +34,10 @@ ${services.map((s) => `- [${s.name}](${url(s.path)}): ${s.meta.description}`).jo
 ## Local lending pages
 
 ${areas.map((a) => `- [${a.kind} Loans in ${a.region}](${url(a.path)}): ${a.meta.description}`).join("\n")}
+
+## Blog
+
+${posts.map((p) => `- [${p.title}](${url(`/blog/${p.slug}`)}): ${p.excerpt}`).join("\n")}
 
 ## Optional
 
