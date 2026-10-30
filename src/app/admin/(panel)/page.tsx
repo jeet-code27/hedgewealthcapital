@@ -1,10 +1,9 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
-import { AlertTriangle, ArrowRight, CheckCircle2, FileText, Inbox, PenSquare, Sparkles, TrendingUp } from "lucide-react";
+import { AlertTriangle, ArrowRight, CheckCircle2, FileText, Inbox, PenSquare, TrendingUp } from "lucide-react";
 import { formNames } from "@/components/admin/constants";
-import { api, Badge, Button, Card, ErrorBox, fmtDate, PageHeader, Spinner, useToast } from "@/components/admin/ui";
+import { Badge, Button, Card, ErrorBox, fmtDate, PageHeader, Spinner, useApiData } from "@/components/admin/ui";
 
 type Stats = {
   published: number;
@@ -20,31 +19,7 @@ type Stats = {
 };
 
 export default function Dashboard() {
-  const [stats, setStats] = useState<Stats | null>(null);
-  const [error, setError] = useState("");
-  const [importing, setImporting] = useState(false);
-  const toast = useToast();
-
-  const load = useCallback(() => {
-    api<Stats>("/api/admin/stats").then(
-      (s) => (setError(""), setStats(s)),
-      (e) => setError(e.message),
-    );
-  }, []);
-  useEffect(load, [load]);
-
-  async function importLegacy() {
-    setImporting(true);
-    try {
-      const { imported } = await api<{ imported: number }>("/api/admin/import-legacy", { method: "POST" });
-      toast(imported ? `Imported ${imported} posts from the old site.` : "Those posts are already imported.");
-      load();
-    } catch (e) {
-      toast((e as Error).message, "error");
-    } finally {
-      setImporting(false);
-    }
-  }
+  const { data: stats, error, reload: load } = useApiData<Stats>("/api/admin/stats");
 
   if (error) return <ErrorBox message={error} onRetry={load} />;
   if (!stats) return <Spinner />;
@@ -161,23 +136,6 @@ export default function Dashboard() {
               <p className="px-5 py-8 text-center text-sm text-muted">No posts yet.</p>
             )}
           </Card>
-
-          {stats.published + stats.drafts < 3 && (
-            <Card className="p-5">
-              <div className="flex gap-3">
-                <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-leaf text-navy">
-                  <Sparkles className="size-[18px]" />
-                </span>
-                <div>
-                  <p className="font-extrabold">Import the old site&apos;s news posts</p>
-                  <p className="mt-1 text-sm text-muted">Adds the 3 articles from hedgewealthcapital.com/news (securitization, $2B milestone, accelerated draws) so you can edit them here.</p>
-                  <Button variant="secondary" className="mt-3" loading={importing} onClick={importLegacy}>
-                    Import 3 posts
-                  </Button>
-                </div>
-              </div>
-            </Card>
-          )}
 
           <Card className="p-5">
             <p className="flex items-center gap-2 font-extrabold">

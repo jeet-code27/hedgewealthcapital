@@ -207,7 +207,7 @@ export default function PostEditor({ id, initial }: { id?: string; initial?: Pos
               className="w-full border-0 bg-transparent text-2xl font-extrabold tracking-tight outline-none placeholder:text-navy/25 sm:text-3xl"
             />
             <div className="flex items-center gap-1 rounded-xl bg-navy-50 px-3 py-2 text-sm">
-              <span className="shrink-0 font-semibold text-muted">hedgewealthcapital.com/blog/</span>
+              <span className="shrink-0 font-semibold text-muted">www.hedgewealthcapital.com/blog/</span>
               <input
                 value={form.slug}
                 onChange={(e) => {

@@ -1,9 +1,10 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { Download, Mail, MailCheck, MailX, Phone, Search, Trash2, X } from "lucide-react";
 import { formNames, submissionStatuses } from "@/components/admin/constants";
-import { api, Badge, Button, Card, Empty, ErrorBox, fmtDate, inputCls, PageHeader, Spinner, useToast } from "@/components/admin/ui";
+import { api, useApiData, Badge, Button, Card, Empty, ErrorBox, fmtDate, inputCls, PageHeader, Spinner, useToast } from "@/components/admin/ui";
 
 type Sub = {
   _id: string;
@@ -24,8 +25,7 @@ const label = (k: string) => k.replace(/([a-z])([A-Z])/g, "$1 $2").replace(/^./,
 const ranges = { all: "All time", today: "Today", "7": "Last 7 days", "30": "Last 30 days", "90": "Last 90 days" } as const;
 
 export default function SubmissionsPage() {
-  const [subs, setSubs] = useState<Sub[] | null>(null);
-  const [error, setError] = useState("");
+  const { data: subs, setData: setSubs, error, reload: load } = useApiData<Sub[]>("/api/admin/submissions");
   const [q, setQ] = useState("");
   const [form, setForm] = useState("All");
   const [status, setStatus] = useState("All");
@@ -36,18 +36,11 @@ export default function SubmissionsPage() {
   const [now] = useState(() => Date.now());
   const toast = useToast();
 
-  const load = useCallback(() => {
-    api<Sub[]>("/api/admin/submissions").then(
-      (list) => {
-        setError("");
-        setSubs(list);
-        const id = new URLSearchParams(window.location.search).get("id");
-        if (id) setOpen(list.find((s) => s._id === id) ?? null);
-      },
-      (e) => setError(e.message),
-    );
-  }, []);
-  useEffect(load, [load]);
+  // Open the submission linked from a notification email (?id=...) once the list is loaded.
+  const linkedId = useSearchParams().get("id");
+  const linked = linkedId ? (subs?.find((s) => s._id === linkedId) ?? null) : null;
+  const [dismissedLink, setDismissedLink] = useState(false);
+  const shown = open ?? (dismissedLink ? null : linked);
 
   const filtered = useMemo(() => {
     if (!subs) return [];
@@ -269,7 +262,15 @@ export default function SubmissionsPage() {
         </Card>
       )}
 
-      {open && <Drawer sub={open} onClose={() => setOpen(null)} onStatus={(st) => setOne(open, { status: st })} onNotes={(n) => setOne(open, { notes: n })} onDelete={() => remove([open._id])} />}
+      {shown && (
+        <Drawer
+          sub={shown}
+          onClose={() => (setOpen(null), setDismissedLink(true))}
+          onStatus={(st) => setOne(shown, { status: st })}
+          onNotes={(n) => setOne(shown, { notes: n })}
+          onDelete={() => remove([shown._id])}
+        />
+      )}
     </>
   );
 }

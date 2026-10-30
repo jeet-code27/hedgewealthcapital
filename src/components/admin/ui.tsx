@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useCallback, useContext, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useState } from "react";
 import { Loader2 } from "lucide-react";
 
 /** Fetch JSON from the admin API; throws the server's error message and bounces to login on 401. */
@@ -18,6 +18,42 @@ export async function api<T = unknown>(url: string, init?: RequestInit & { json?
   const data = await res.json().catch(() => ({}));
   if (!res.ok) throw new Error((data as { error?: string }).error || `Request failed (${res.status})`);
   return data as T;
+}
+
+/*
+ * Stale-while-revalidate cache for admin GETs: a page shows the last data it saw instantly
+ * (no spinner on every navigation) and refreshes in the background.
+ */
+const cache = new Map<string, unknown>();
+
+export function prefetch(url: string) {
+  if (!cache.has(url)) api(url).then((d) => cache.set(url, d), () => {});
+}
+
+export function useApiData<T>(url: string) {
+  const [data, setState] = useState<T | null>(() => (cache.get(url) as T) ?? null);
+  const [error, setError] = useState("");
+  const reload = useCallback(() => {
+    api<T>(url).then(
+      (d) => {
+        cache.set(url, d);
+        setError("");
+        setState(d);
+      },
+      (e) => setError(e.message),
+    );
+  }, [url]);
+  useEffect(reload, [reload]);
+  const setData = useCallback(
+    (next: T | null | ((prev: T | null) => T | null)) =>
+      setState((prev) => {
+        const value = typeof next === "function" ? (next as (p: T | null) => T | null)(prev) : next;
+        if (value) cache.set(url, value);
+        return value;
+      }),
+    [url],
+  );
+  return { data, setData, error, reload };
 }
 
 export const inputCls =

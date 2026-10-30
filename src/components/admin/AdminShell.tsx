@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { prefetch } from "./ui";
 import { ExternalLink, FileText, FolderTree, Images, Inbox, LayoutDashboard, LogOut, Menu, PenSquare, X } from "lucide-react";
 
 const nav = [
@@ -18,6 +19,11 @@ const nav = [
 export default function AdminShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
+  // Warm the cache for the main screens so switching pages doesn't wait on the database.
+  useEffect(() => {
+    ["/api/admin/stats", "/api/admin/posts", "/api/admin/submissions"].forEach(prefetch);
+  }, []);
   const active = (href: string) => (href === "/admin" ? pathname === href : href === "/admin/posts" ? pathname === href || /^\/admin\/posts\/[a-f0-9]{24}/.test(pathname) : pathname.startsWith(href));
 
   async function logout() {

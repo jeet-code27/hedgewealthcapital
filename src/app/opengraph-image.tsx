@@ -30,7 +30,7 @@ export default async function Image() {
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
             <div style={{ display: "flex", background: "#7AC644", color: "#192861", fontSize: 24, fontWeight: 800, padding: "12px 22px", borderRadius: 14 }}>1-800-674-3804</div>
-            <div style={{ fontSize: 22, color: "#5b6380" }}>hedgewealthcapital.com</div>
+            <div style={{ fontSize: 22, color: "#5b6380" }}>www.hedgewealthcapital.com</div>
           </div>
         </div>
         <div style={{ width: 380, display: "flex", flexDirection: "column", justifyContent: "center", gap: 18, background: "#192861", padding: "0 44px" }}>

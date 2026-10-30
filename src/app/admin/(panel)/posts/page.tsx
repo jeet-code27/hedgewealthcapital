@@ -1,9 +1,9 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import { ExternalLink, Eye, EyeOff, Pencil, PenSquare, Search, Star, Trash2 } from "lucide-react";
-import { api, Badge, Button, Card, Empty, ErrorBox, fmtDate, inputCls, PageHeader, Spinner, useToast } from "@/components/admin/ui";
+import { api, useApiData, Badge, Button, Card, Empty, ErrorBox, fmtDate, inputCls, PageHeader, Spinner, useToast } from "@/components/admin/ui";
 
 type Row = {
   _id: string;
@@ -23,21 +23,12 @@ type Row = {
 const PAGE = 12;
 
 export default function PostsPage() {
-  const [rows, setRows] = useState<Row[] | null>(null);
-  const [error, setError] = useState("");
+  const { data: rows, setData: setRows, error, reload: load } = useApiData<Row[]>("/api/admin/posts");
   const [q, setQ] = useState("");
   const [status, setStatus] = useState<"All" | "Published" | "Draft">("All");
   const [sort, setSort] = useState<"updated" | "published" | "title">("updated");
   const [page, setPage] = useState(1);
   const toast = useToast();
-
-  const load = useCallback(() => {
-    api<Row[]>("/api/admin/posts").then(
-      (r) => (setError(""), setRows(r)),
-      (e) => setError(e.message),
-    );
-  }, []);
-  useEffect(load, [load]);
 
   const filtered = useMemo(() => {
     if (!rows) return [];

@@ -84,7 +84,7 @@ export default function SeoPanel({ input, onChange }: { input: Input; onChange: 
             <textarea rows={3} value={seo.metaDescription} onChange={(e) => set({ metaDescription: e.target.value })} className={inputCls} placeholder="Defaults to the excerpt. Summarise the post and include the keyword." />
           </Field>
           <Field label="Canonical URL" hint="leave empty for default">
-            <input value={seo.canonicalUrl} onChange={(e) => set({ canonicalUrl: e.target.value })} className={inputCls} placeholder={`https://hedgewealthcapital.com/blog/${slug || "post-slug"}`} />
+            <input value={seo.canonicalUrl} onChange={(e) => set({ canonicalUrl: e.target.value })} className={inputCls} placeholder={`https://www.hedgewealthcapital.com/blog/${slug || "post-slug"}`} />
           </Field>
           <label className="flex items-center gap-2.5 text-sm font-bold">
             <input type="checkbox" checked={seo.noIndex} onChange={(e) => set({ noIndex: e.target.checked })} className="size-4 accent-[#192861]" />
@@ -116,7 +116,7 @@ export default function SeoPanel({ input, onChange }: { input: Input; onChange: 
           <div>
             <p className="mb-2 text-xs font-bold text-navy">Google preview</p>
             <div className="rounded-xl border border-navy/8 bg-white p-4 font-[arial,sans-serif]">
-              <p className="truncate text-xs text-[#4d5156]">hedgewealthcapital.com › blog › {slug || "post-slug"}</p>
+              <p className="truncate text-xs text-[#4d5156]">www.hedgewealthcapital.com › blog › {slug || "post-slug"}</p>
               <p className="mt-1 line-clamp-1 text-lg text-[#1a0dab]">{metaTitle}</p>
               <p className="mt-1 line-clamp-2 text-sm text-[#4d5156]">{desc}</p>
             </div>

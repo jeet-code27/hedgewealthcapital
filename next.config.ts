@@ -10,6 +10,8 @@ const nextConfig: NextConfig = {
   // Old WordPress URLs → new pages, so existing links and rankings carry over.
   async redirects() {
     return [
+      // One canonical host: the bare domain goes to www.
+      { source: "/:path*", has: [{ type: "host", value: "hedgewealthcapital.com" }], destination: "https://www.hedgewealthcapital.com/:path*", permanent: true },
       { source: "/news", destination: "/blog", permanent: true },
       { source: "/resources", destination: "/blog", permanent: true },
       ...posts.map((p) => ({ source: `/${p.slug}`, destination: `/blog/${p.slug}`, permanent: true })),
