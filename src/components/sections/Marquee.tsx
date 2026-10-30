@@ -2,7 +2,7 @@ import { marquee as items } from "@/lib/content";
 
 export default function Marquee() {
   return (
-    <div className="relative -rotate-1 border-y border-navy/10 bg-navy py-5 text-white">
+    <div className="relative border-y border-navy/10 bg-navy py-4 text-white lg:py-3">
       <div className="mask-fade-x flex overflow-hidden">
         <div className="animate-marquee flex shrink-0 items-center gap-10 pr-10 whitespace-nowrap">
           {[...items, ...items].map((item, i) => (

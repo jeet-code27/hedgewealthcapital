@@ -53,8 +53,11 @@ export default function Home() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
-      <Hero />
-      <Marquee />
+      {/* Hero + strip fill the first screen on desktop */}
+      <div className="lg:flex lg:min-h-svh lg:flex-col">
+        <Hero />
+        <Marquee />
+      </div>
       <LtcPromo />
       <Strategies />
       <Highlights />

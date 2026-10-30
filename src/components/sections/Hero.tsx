@@ -29,13 +29,13 @@ export default function Hero() {
   const titleWords = hero.title.split(" ");
 
   return (
-    <section className="relative overflow-hidden pt-28 pb-16 lg:pt-32 lg:pb-24">
+    <section className="relative overflow-hidden pt-28 pb-16 lg:flex lg:flex-1 lg:flex-col lg:justify-center lg:pt-24 lg:pb-4">
       {/* Background */}
       <div className="bg-grid mask-fade-b absolute inset-0 -z-10" />
       <div className="absolute -top-40 -left-40 -z-10 size-[560px] rounded-full bg-navy/10 blur-[120px]" />
       <div className="absolute top-20 -right-32 -z-10 size-[520px] rounded-full bg-leaf/20 blur-[120px]" />
 
-      <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 sm:px-8 lg:grid-cols-[1.02fr_1fr] lg:gap-6">
+      <div className="mx-auto grid w-full max-w-7xl items-center gap-10 px-5 sm:px-8 lg:grid-cols-[1.02fr_1fr] lg:gap-6">
         <div className="relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -47,7 +47,7 @@ export default function Hero() {
             {hero.eyebrow}
           </motion.div>
 
-          <h1 className="mt-6 text-[2.6rem] leading-[1.02] font-extrabold tracking-[-0.035em] text-navy sm:text-6xl xl:text-[4.6rem]">
+          <h1 className="mt-6 text-[2.6rem] leading-[1.02] font-extrabold tracking-[-0.035em] text-navy sm:text-6xl lg:text-[min(3.75rem,7svh)] xl:text-[min(4.6rem,7.6svh)]">
             {titleWords.map((word, i) => {
               const accent = hero.accentWords.includes(word);
               return (
@@ -87,7 +87,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 1.1, ease }}
-            className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center"
+            className="mt-9 flex flex-col gap-3 lg:mt-7 sm:flex-row sm:flex-wrap sm:items-center"
           >
             <Link
               href={hero.primaryCta.href}
@@ -126,7 +126,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.4, delay: 0.2, ease }}
-          className="relative h-[440px] sm:h-[540px] lg:h-[640px]"
+          className="relative h-[440px] sm:h-[540px] lg:h-[min(640px,calc(100svh-200px))]"
         >
           <div className="absolute inset-[8%] rounded-full bg-gradient-to-br from-navy-100 via-white to-leaf-100 blur-2xl" />
           <HeroScene />
@@ -158,22 +158,6 @@ export default function Hero() {
           ))}
         </motion.div>
       </div>
-
-      {/* Scroll cue */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2.2 }}
-        className="mt-6 hidden justify-center lg:flex"
-      >
-        <div className="flex h-10 w-6 justify-center rounded-full border-2 border-navy/20 pt-2">
-          <motion.span
-            animate={{ y: [0, 12, 0], opacity: [1, 0.2, 1] }}
-            transition={{ duration: 1.8, repeat: Infinity }}
-            className="h-2 w-1 rounded-full bg-navy"
-          />
-        </div>
-      </motion.div>
     </section>
   );
 }
