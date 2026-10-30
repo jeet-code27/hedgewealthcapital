@@ -35,5 +35,5 @@ export async function POST(request: Request) {
     return Response.json({ ok: false, errors }, { status: 422 });
   }
 
-  return deliverInquiry("homepage-prequalify", body);
+  return deliverInquiry("homepage-prequalify", body, request);
 }

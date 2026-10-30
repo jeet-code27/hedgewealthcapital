@@ -1,5 +1,5 @@
 import { areas } from "@/lib/areas";
-import { posts } from "@/lib/blog";
+import { getPublishedPosts } from "@/lib/posts";
 import { contact } from "@/lib/content";
 import { services } from "@/lib/services";
 import { site } from "@/lib/site";
@@ -8,7 +8,8 @@ import { site } from "@/lib/site";
  * llms.txt (https://llmstxt.org): a plain-markdown map of the site for AI assistants.
  * Built from the same content files as the pages, so it stays in sync.
  */
-export function GET() {
+export async function GET() {
+  const posts = await getPublishedPosts();
   const url = (path: string) => `${site.url}${path}`;
   const body = `# ${site.name}
 

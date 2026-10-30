@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { formatDate, type BlogPost } from "@/lib/blog";
+import { formatDate, type ListPost } from "@/lib/post-types";
 
 /** Post tile with a tilting 3D image card. `featured` spans wide with a side-by-side layout. */
-export default function PostCard({ post, featured = false, preload = false }: { post: BlogPost; featured?: boolean; preload?: boolean }) {
+export default function PostCard({ post, featured = false, preload = false }: { post: ListPost; featured?: boolean; preload?: boolean }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
@@ -21,7 +21,7 @@ export default function PostCard({ post, featured = false, preload = false }: { 
             alt={post.image.alt}
             fill
             preload={preload}
-            sizes={featured ? "(min-width: 1024px) 640px, 100vw" : "(min-width: 768px) 600px, 100vw"}
+            sizes={featured ? "(min-width: 1024px) 640px, 100vw" : "(min-width: 1024px) 400px, (min-width: 768px) 50vw, 100vw"}
             className="object-cover transition duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent" />
@@ -30,9 +30,11 @@ export default function PostCard({ post, featured = false, preload = false }: { 
           </span>
         </div>
         <div className={`flex flex-1 flex-col ${featured ? "justify-center p-7 sm:p-10" : "p-6 sm:p-7"}`}>
-          <time dateTime={post.date} className="text-sm font-semibold text-leaf-600">
-            {formatDate(post.date)}
-          </time>
+          <p className="flex items-center gap-2 text-sm font-semibold text-leaf-600">
+            <time dateTime={post.date}>{formatDate(post.date)}</time>
+            <span className="text-navy/25">•</span>
+            <span className="text-muted">{post.readingMinutes} min read</span>
+          </p>
           <h3 className={`mt-3 font-extrabold tracking-tight text-navy ${featured ? "text-2xl leading-tight sm:text-3xl" : "text-lg leading-snug"}`}>{post.title}</h3>
           <p className="mt-3 leading-relaxed text-muted">{post.excerpt}</p>
           <span className="mt-auto inline-flex items-center gap-2 pt-6 font-bold text-navy">

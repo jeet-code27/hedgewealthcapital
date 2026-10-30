@@ -1,10 +1,5 @@
 import type { Metadata } from "next";
 import { Manrope, Instrument_Serif } from "next/font/google";
-import SmoothScroll from "@/components/SmoothScroll";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import PrequalifyTab from "@/components/layout/PrequalifyTab";
-import CallButton from "@/components/layout/CallButton";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -34,15 +29,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${manrope.variable} ${serifDisplay.variable} antialiased`}>
-      <body className="min-h-full">
-        <SmoothScroll>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-          <PrequalifyTab />
-          <CallButton />
-        </SmoothScroll>
-      </body>
+      <body className="min-h-full">{children}</body>
     </html>
   );
 }

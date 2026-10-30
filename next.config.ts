@@ -5,6 +5,8 @@ const nextConfig: NextConfig = {
   /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
+  // Blog images uploaded through the admin panel are served from Cloudinary.
+  images: { remotePatterns: [{ protocol: "https", hostname: "res.cloudinary.com" }] },
   // Old WordPress URLs → new pages, so existing links and rankings carry over.
   async redirects() {
     return [

@@ -44,5 +44,5 @@ export async function POST(request: Request) {
     return Response.json({ ok: false, errors }, { status: 422 });
   }
 
-  return deliverInquiry("broker-application", body);
+  return deliverInquiry("broker-application", body, request);
 }

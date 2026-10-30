@@ -43,5 +43,5 @@ export async function POST(request: Request) {
     return Response.json({ ok: false, errors }, { status: 422 });
   }
 
-  return deliverInquiry("contact-page", body);
+  return deliverInquiry("contact-page", body, request);
 }

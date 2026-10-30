@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Reveal, { WordsReveal } from "@/components/Reveal";
-import PostCard from "@/components/blog/PostCard";
-import { blogMeta, posts } from "@/lib/blog";
+import BlogGrid from "@/components/blog/BlogGrid";
+import { blogMeta } from "@/lib/blog";
+import { getPublishedPosts } from "@/lib/posts";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -11,9 +12,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/blog" },
 };
 
-const sorted = [...posts].sort((a, b) => b.date.localeCompare(a.date));
-
-const jsonLd = [
+const buildJsonLd = (sorted: Awaited<ReturnType<typeof getPublishedPosts>>) => [
   {
     "@context": "https://schema.org",
     "@type": "Blog",
@@ -33,8 +32,9 @@ const jsonLd = [
   },
 ];
 
-export default function BlogPage() {
-  const [featured, ...rest] = sorted;
+export default async function BlogPage() {
+  const posts = await getPublishedPosts();
+  const jsonLd = buildJsonLd(posts);
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
@@ -61,16 +61,7 @@ export default function BlogPage() {
       </section>
 
       <section className="relative pt-6 pb-20 lg:pb-28">
-        <div className="mx-auto grid max-w-7xl gap-6 px-5 sm:px-8 md:grid-cols-2">
-          <Reveal y={40} className="md:col-span-2">
-            <PostCard post={featured} featured preload />
-          </Reveal>
-          {rest.map((p, i) => (
-            <Reveal key={p.slug} delay={i * 0.08} y={40} className="h-full">
-              <PostCard post={p} />
-            </Reveal>
-          ))}
-        </div>
+        <BlogGrid posts={posts} />
       </section>
     </>
   );

@@ -1,13 +1,14 @@
 import type { MetadataRoute } from "next";
 import { services } from "@/lib/services";
 import { areas } from "@/lib/areas";
-import { posts } from "@/lib/blog";
+import { getPublishedPosts } from "@/lib/posts";
 import { site } from "@/lib/site";
 
 // Fixed date keeps the sitemap static; bump it when page content changes.
 const updated = "2026-10-27";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts = await getPublishedPosts();
   return [
     { url: site.url, lastModified: updated, changeFrequency: "weekly", priority: 1 },
     { url: `${site.url}/about-hedge-wealth-capital`, lastModified: updated, changeFrequency: "monthly", priority: 0.7 },
