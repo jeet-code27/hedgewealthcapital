@@ -7,7 +7,7 @@ import GoalFinder from "@/components/service/GoalFinder";
 import ServiceIcon from "@/components/service/ServiceIcon";
 import { compareRows, hubFaqs, hubHero, hubMeta } from "@/lib/loan-programs";
 import { getService, services } from "@/lib/services";
-import { site } from "@/lib/site";
+import { schemaPublisher, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: hubMeta.title,
@@ -22,7 +22,7 @@ const jsonLd = [
     name: hubMeta.title,
     url: `${site.url}/loan-programs`,
     description: hubMeta.description,
-    publisher: { "@id": `${site.url}/#organization` },
+    publisher: schemaPublisher,
     mainEntity: {
       "@type": "ItemList",
       itemListElement: compareRows.map((r, i) => {

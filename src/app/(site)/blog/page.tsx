@@ -4,7 +4,7 @@ import Reveal, { WordsReveal } from "@/components/Reveal";
 import BlogGrid from "@/components/blog/BlogGrid";
 import { blogMeta } from "@/lib/blog";
 import { getPublishedPosts } from "@/lib/posts";
-import { site } from "@/lib/site";
+import { schemaPublisher, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: blogMeta.title,
@@ -19,7 +19,7 @@ const buildJsonLd = (sorted: Awaited<ReturnType<typeof getPublishedPosts>>) => [
     name: blogMeta.title,
     url: `${site.url}/blog`,
     description: blogMeta.description,
-    publisher: { "@id": `${site.url}/#organization` },
+    publisher: schemaPublisher,
     blogPost: sorted.map((p) => ({ "@type": "BlogPosting", headline: p.title, url: `${site.url}/blog/${p.slug}`, datePublished: p.date })),
   },
   {

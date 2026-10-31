@@ -10,7 +10,7 @@ import Faq from "@/components/sections/Faq";
 import { contact } from "@/lib/content";
 import { formatDate, getPostBySlug, getPublishedPosts } from "@/lib/posts";
 import { posts as legacyPosts } from "@/lib/blog";
-import { site } from "@/lib/site";
+import { schemaPublisher, site } from "@/lib/site";
 
 export async function generateStaticParams() {
   const posts = await getPublishedPosts();
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: PageProps<"/blog/[slug]">): P
     description,
     keywords: seo.focusKeyword ? [seo.focusKeyword, ...post.tags.map((t) => t.name)] : post.tags.map((t) => t.name),
     alternates: { canonical: seo.canonicalUrl || `/blog/${post.slug}` },
-    robots: seo.noIndex ? { index: false, follow: true } : undefined,
+    ...(seo.noIndex ? { robots: { index: false, follow: true } } : {}),
     authors: post.author ? [{ name: post.author.name }] : [{ name: site.name }],
     openGraph: {
       type: "article",
@@ -67,7 +67,7 @@ export default async function BlogPostPage({ params }: PageProps<"/blog/[slug]">
       keywords: [post.seo.focusKeyword, ...post.tags.map((t) => t.name)].filter(Boolean).join(", ") || undefined,
       timeRequired: `PT${post.readingMinutes}M`,
       author: post.author ? { "@type": "Person", name: post.author.name, jobTitle: post.author.role || undefined } : { "@type": "Organization", name: site.name, url: site.url },
-      publisher: { "@id": `${site.url}/#organization` },
+      publisher: schemaPublisher,
     },
     {
       "@context": "https://schema.org",

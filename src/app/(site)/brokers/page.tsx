@@ -5,7 +5,7 @@ import BrokerApply from "@/components/broker/BrokerApply";
 import { BrokerDscr, BrokerPerks, BrokerPillars, BrokerSubmission } from "@/components/broker/BrokerSections";
 import Faq from "@/components/sections/Faq";
 import { brokerFaqs, brokerMeta } from "@/lib/broker-content";
-import { site } from "@/lib/site";
+import { schemaPublisher, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: brokerMeta.title,
@@ -20,7 +20,7 @@ const jsonLd = [
     name: brokerMeta.title,
     url: `${site.url}/brokers`,
     description: brokerMeta.description,
-    publisher: { "@id": `${site.url}/#organization` },
+    publisher: schemaPublisher,
   },
   {
     "@context": "https://schema.org",
