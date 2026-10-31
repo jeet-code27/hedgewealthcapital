@@ -12,6 +12,7 @@
     "@react-three/drei": "^10.7.9",
     "@react-three/fiber": "^9.8.2",
     "@tiptap/extension-image": "^3.32.1",
+    "@tiptap/extension-table": "^3.32.1",
     "@tiptap/pm": "^3.32.1",
     "@tiptap/react": "^3.32.1",
     "@tiptap/starter-kit": "^3.32.1",

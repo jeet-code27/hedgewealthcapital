@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { EditorContent, useEditor, useEditorState, type Editor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Image from "@tiptap/extension-image";
+import { Table, TableCell, TableHeader, TableRow } from "@tiptap/extension-table";
 import {
   Bold,
   Code2,
@@ -22,6 +23,7 @@ import {
   Redo2,
   Search,
   Strikethrough,
+  Table2,
   Underline,
   Undo2,
   Video,
@@ -44,6 +46,10 @@ export default function RichEditor({ value, onChange }: { value: string; onChang
         link: { openOnClick: false, autolink: true, defaultProtocol: "https", HTMLAttributes: { rel: null, target: null } },
       }),
       Image.configure({ HTMLAttributes: { loading: "lazy" } }),
+      Table,
+      TableRow,
+      TableHeader,
+      TableCell,
     ],
     content: value,
     immediatelyRender: false,
@@ -186,6 +192,7 @@ function Toolbar({ editor, onImage }: { editor: Editor; onImage: () => void }) {
       { icon: Quote, label: "Quote", on: s.quote, run: () => c().toggleBlockquote().run() },
       { icon: Code2, label: "Code block", on: s.code, run: () => c().toggleCodeBlock().run() },
       { icon: Minus, label: "Divider", run: () => c().setHorizontalRule().run() },
+      { icon: Table2, label: "Insert table", run: () => c().insertTable({ rows: 3, cols: 3, withHeaderRow: true }).run() },
     ],
     [
       { icon: Link2, label: "Add / edit link", on: s.link, run: setLink },

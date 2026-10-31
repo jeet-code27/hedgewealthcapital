@@ -23,7 +23,7 @@ export default function PostToc({ items }: { items: TocItem[] }) {
   if (items.length < 2) return null;
 
   return (
-    <nav aria-label="On this page" className="rounded-[24px] border border-navy/10 bg-white p-5 shadow-[0_20px_40px_-35px_rgb(25_40_97/0.6)]">
+    <nav aria-label="On this page" data-lenis-prevent className="max-h-[calc(100vh-9rem)] overflow-y-auto rounded-[24px] border border-navy/10 bg-white p-5 shadow-[0_20px_40px_-35px_rgb(25_40_97/0.6)]">
       <p className="text-xs font-extrabold tracking-[0.18em] text-leaf-600 uppercase">On this page</p>
       <ol className="mt-3 space-y-1 border-l-2 border-navy/10">
         {items.map((i) => (

@@ -90,7 +90,7 @@ export const strategies = [
     key: "fixFlip",
     tag: "100% Fix & Flip",
     title: "Premier Fix & Flip Loan",
-    body: "The fix-to-flip loan for those who want to keep more cash in their pocket. Get 100% of purchase and rehab funds, up to 75% of ARV, including mixed-use properties.",
+    body: "The fix-to-flip loan for those who want to keep more cash in their pocket. Get 100% of purchase and rehab funds, up to 70% of ARV, including mixed-use properties.",
     link: { label: "Explore Hard Money Loans", href: "/hard-money-loans" },
   },
   {

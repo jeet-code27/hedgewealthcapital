@@ -86,6 +86,7 @@ export const services: ServicePage[] = [
         id: "how-hard-money-works",
         heading: "How a Hard Money Loan to Flip Houses Works",
         paragraphs: [
+          "Wondering what you still pay yourself? Our guide to [cash needed to close a 100% LTC loan](/blog/100-ltc-fix-and-flip-loan-cash-to-close) walks through two worked examples.",
           "A hard money loan is short-term, asset-based financing secured by the property you are buying. Instead of qualifying you on W-2s and debt-to-income ratios, we look at the deal itself: the purchase price, the scope of work, and what the home should be worth once the work is done.",
           "Your loan amount is sized on both total project cost (loan-to-cost) and the after-repair value. Fund up to 100% of acquisition and rehab, subject to an ARV cap that keeps every project sensibly leveraged. If ARV is the number that drives your deal, our [ARV loans](/arv-loans) page explains how after-repair value is measured.",
           "Payments are interest-only for a 6 to 12 month term, with the balance due when you sell or refinance. There is no prepayment penalty, so paying the loan off the week the house sells costs you nothing extra.",
@@ -278,6 +279,7 @@ export const services: ServicePage[] = [
         id: "what-is-dscr",
         heading: "What Is a DSCR Loan?",
         paragraphs: [
+          "New to this type of financing? Our guide, [What Is a DSCR Loan?](/blog/what-is-a-dscr-loan), walks through the formula with a worked example.",
           "A debt service coverage ratio (DSCR) loan is approved on the cash flow of the rental itself. We compare the property's rental income with its monthly debt payment. If the rent covers the payment, the property can qualify, regardless of what your personal tax return says.",
           "That makes DSCR financing the natural long-term home for investors who are self-employed, own several properties, or simply do not want to document personal income for every purchase. It is also the most common exit for [hard money loans](/hard-money-loans) once a renovation is finished.",
         ],
