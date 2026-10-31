@@ -6,9 +6,9 @@
  */
 
 export const aboutMeta = {
-  title: "About Hedge Wealth Capital | Private Real Estate Lender Since 2010",
+  title: "About Hedge Wealth Capital | Private Lender Since 2010",
   description:
-    "Hedge Wealth Capital is a privately owned real estate lender founded in 2010, funding fix & flip, ground-up construction, multifamily bridge, and rental loans in all 50 states and D.C.",
+    "Privately owned real estate lender founded in 2010, funding fix & flip, ground-up construction, multifamily bridge and rental loans in all 50 states and D.C.",
 };
 
 export const aboutHero = {

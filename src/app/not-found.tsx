@@ -41,7 +41,7 @@ export default function NotFound() {
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/#loan-programs"
+                href="/loan-programs"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-leaf px-7 py-4 font-extrabold text-navy shadow-[0_6px_0_0_#4d8c22] transition hover:-translate-y-0.5 hover:bg-white active:translate-y-1 active:shadow-none sm:w-auto"
               >
                 Explore Loan Programs

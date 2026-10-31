@@ -14,7 +14,9 @@ export type ServiceSlug =
   | "arv-loans"
   | "cash-out-refinance"
   | "rental-portfolio-loans"
-  | "bridge-loans";
+  | "bridge-loans"
+  | "ground-up-construction"
+  | "multifamily-bridge";
 
 export type ServiceWidget = "ltc-calculator" | "dscr-calculator" | "before-after";
 
@@ -23,7 +25,7 @@ export type ServicePage = {
   path: string;
   name: string;
   tag: string;
-  icon: "hammer" | "handshake" | "home" | "trend" | "cash" | "grid" | "bridge";
+  icon: "hammer" | "handshake" | "home" | "trend" | "cash" | "grid" | "bridge" | "crane" | "building";
   meta: { title: string; description: string; keywords: string[] };
   hero: {
     eyebrow: string;
@@ -56,9 +58,9 @@ export const services: ServicePage[] = [
     tag: "Fix & Flip Financing",
     icon: "hammer",
     meta: {
-      title: "Hard Money Loans for Flipping Houses | Up to 100% LTC | Hedge Wealth Capital",
+      title: "Hard Money Loans for Flipping Houses | Up to 100% LTC",
       description:
-        "Hard money fix and flip loans covering up to 100% of purchase and rehab costs. Same-day approval, pre-approval with no deal required, and fast closings in all 50 states.",
+        "Hard money fix and flip loans covering up to 100% of purchase and rehab. Same-day approval, pre-approval with no deal required, fast closings in all 50 states.",
       keywords: ["hard money loans for flipping houses", "hard money fix and flip loans", "hard money loan to flip houses", "hard money lenders for fix and flip"],
     },
     hero: {
@@ -153,9 +155,9 @@ export const services: ServicePage[] = [
     tag: "Direct Private Lender",
     icon: "handshake",
     meta: {
-      title: "Private Money Lenders for Real Estate Investors | Hedge Wealth Capital",
+      title: "Private Money Lenders for Real Estate Investors | HWC",
       description:
-        "A direct private money lender funding real estate investors with 100% of its own capital since 2010. In-house underwriting, same-day approvals, and loans in all 50 states and D.C.",
+        "Direct private money lender funding investors with its own capital since 2010. In-house underwriting, same-day approvals, loans in all 50 states and D.C.",
       keywords: ["private money lenders for real estate", "private money lender", "private lenders for real estate", "private mortgage lenders"],
     },
     hero: {
@@ -248,9 +250,9 @@ export const services: ServicePage[] = [
     tag: "30-Year Rental Loans",
     icon: "home",
     meta: {
-      title: "DSCR Loans for Investment Property | 30-Year Fixed | Hedge Wealth Capital",
+      title: "DSCR Loans for Investment Property | 30-Year Fixed | HWC",
       description:
-        "30-year fixed DSCR loans that qualify on rental cash flow, not personal income. Up to 80% LTV, 680+ FICO, no tax returns or W-2s, single-family and 2–10 unit rentals in all 50 states.",
+        "30-year fixed DSCR loans that qualify on rental cash flow, not personal income. Up to 80% LTV, 680+ FICO, no tax returns or W-2s, in all 50 states.",
       keywords: ["dscr loan", "dscr loans", "dscr loan for investment property", "dscr loan lenders", "dscr loan program"],
     },
     hero: {
@@ -336,9 +338,9 @@ export const services: ServicePage[] = [
     tag: "After-Repair Value Lending",
     icon: "trend",
     meta: {
-      title: "ARV Loans for Real Estate Investors | After Repair Value Financing | HWC",
+      title: "ARV Loans for Investors | After Repair Value Financing | HWC",
       description:
-        "ARV loans sized on what your property will be worth after renovation. Fund purchase and rehab with draws released as work is completed, from a direct lender in all 50 states.",
+        "ARV loans sized on what your property will be worth after renovation. Fund purchase and rehab with draws as work is completed, in all 50 states.",
       keywords: ["arv loan", "arv loans", "arv lenders", "loan to arv", "arv finance"],
     },
     hero: {
@@ -412,9 +414,9 @@ export const services: ServicePage[] = [
     tag: "Rental Property Refinance",
     icon: "cash",
     meta: {
-      title: "Cash-Out Refinance on Rental Property | Up to 75% LTV | Hedge Wealth Capital",
+      title: "Cash-Out Refinance on Rental Property | Up to 75% LTV",
       description:
-        "Cash-out refinance your rental property based on rental cash flow, not personal income. Up to 75% LTV, typical 3-month seasoning, and a Delayed Purchase option for properties bought with cash.",
+        "Cash-out refinance your rental based on rental cash flow, not personal income. Up to 75% LTV, typical 3-month seasoning, and a Delayed Purchase option.",
       keywords: ["cash out refinance rental property", "rental property cash out refinance", "cash out refi on rental property", "rental property refinance lenders"],
     },
     hero: {
@@ -499,9 +501,9 @@ export const services: ServicePage[] = [
     tag: "Portfolio Financing",
     icon: "grid",
     meta: {
-      title: "Rental Portfolio Loans | Financing for Growing Investors | Hedge Wealth Capital",
+      title: "Rental Portfolio Loans for Growing Investors | HWC",
       description:
-        "Rental portfolio loans for investors scaling from one property to many. Cash-flow based approval, no personal income verification, LLCs welcome, and lending in all 50 states.",
+        "Rental portfolio loans for investors scaling from one property to many. Cash-flow approval, no personal income verification, LLCs welcome, all 50 states.",
       keywords: ["rental portfolio loans", "rental portfolio lenders", "rental property portfolio loans", "single family rental portfolio financing"],
     },
     hero: {
@@ -586,9 +588,9 @@ export const services: ServicePage[] = [
     tag: "Short-Term Bridge Capital",
     icon: "bridge",
     meta: {
-      title: "Bridge Loans for Real Estate Investors | Close in 7 Days | Hedge Wealth Capital",
+      title: "Bridge Loans for Real Estate Investors | HWC",
       description:
-        "Short-term bridge loans for investment property: up to 90% LTC on multifamily and new construction, no appraisal required, and closings in as little as 7 days in all 50 states.",
+        "Short-term bridge loans for investment property: up to 90% LTC on multifamily and new construction, with closings in as little as 7 days in all 50 states.",
       keywords: ["bridge loans for real estate investors", "bridge loan lenders", "bridge loan for investment property", "multifamily bridge loans"],
     },
     hero: {
@@ -615,7 +617,7 @@ export const services: ServicePage[] = [
         heading: "When a Bridge Loan for Investment Property Makes Sense",
         paragraphs: [
           "A bridge loan is short-term capital that carries a property from where it is today to its next stage: renovated, stabilized, built or sold. It is the right tool when the opportunity is time-sensitive or the property does not yet qualify for long-term financing.",
-          "On our multifamily bridge program, current cash flow and DSCR are not considered, which means a half-vacant building or a project mid-construction can still be financed on its business plan.",
+          "On our [multifamily bridge program](/loan-programs/multifamily-bridge), current cash flow and DSCR are not considered, which means a half-vacant building or a project mid-construction can still be financed on its business plan.",
         ],
         points: [
           { title: "Fast acquisitions", text: "Compete with cash buyers on auctions, estate sales and off-market deals." },
@@ -629,7 +631,7 @@ export const services: ServicePage[] = [
         id: "construction-bridge",
         heading: "Bridge Capital for Ground-Up Construction",
         paragraphs: [
-          "For shovel-ready residential projects we finance up to 90% loan-to-cost, covering up to 50% of the acquisition of entitled land, up to 75% of horizontal development and up to 100% of vertical construction. Draws can be funded in as little as 3 business days.",
+          "For shovel-ready residential projects, our [ground-up construction loans](/loan-programs/ground-up-construction) finance up to 90% loan-to-cost, covering up to 50% of the acquisition of entitled land, up to 75% of horizontal development and up to 100% of vertical construction. Draws can be funded in as little as 3 business days.",
           "We also offer reimbursement of cost basis on free-and-clear land, returning capital you have already put into the site. Financing is available for single-family homes, multifamily buildings, scattered-site developments and subdivisions.",
         ],
       },
@@ -665,6 +667,188 @@ export const services: ServicePage[] = [
       { q: "How do I exit a bridge loan?", a: "Most investors sell the finished property or refinance into a 30-year DSCR rental loan, a cash-out refinance or portfolio financing." },
     ],
     related: ["hard-money-loans", "dscr-loans", "private-money-lenders"],
+  },
+  {
+    slug: "ground-up-construction",
+    path: "/loan-programs/ground-up-construction",
+    name: "Ground-Up Construction Loans",
+    tag: "New Build Financing",
+    icon: "crane",
+    meta: {
+      title: "Ground-Up Construction Loans | Up to 90% LTC | HWC",
+      description:
+        "Ground-up construction loans up to 90% LTC, covering land, horizontal and vertical costs, with draws in as little as 3 business days in all 50 states.",
+      keywords: ["ground up construction loans", "construction loans for investors", "new construction financing for investors", "spec home construction loans"],
+    },
+    hero: {
+      eyebrow: "Investor Construction Financing",
+      title: "Ground-Up Construction",
+      accent: "Loans for Investors",
+      intro:
+        "Take a shovel-ready site from entitled land to finished building with one lender. Hedge Wealth Capital finances land, site work and vertical construction, then helps you move into long-term financing when the build is done.",
+      image: { src: "/images/construction.jpg", alt: "Timber roof trusses on a new home under construction" },
+      chips: [
+        { label: "Up to 90% LTC", note: "Across the project" },
+        { label: "3-Day Draws", note: "As little as 3 business days" },
+      ],
+    },
+    stats: [
+      { value: "90%", label: "Loan-to-cost" },
+      { value: "100%", label: "Of vertical costs" },
+      { value: "3 Days", label: "Draws funded as fast as" },
+      { value: "50 + DC", label: "States served" },
+    ],
+    sections: [
+      {
+        id: "what-the-loan-covers",
+        heading: "What a Ground-Up Construction Loan Covers",
+        paragraphs: [
+          "A construction budget has three very different stages, and each one carries different risk. We size each stage separately, so you can see where the loan funds the work and where your own capital goes in.",
+          "Total leverage reaches up to 90% loan-to-cost and up to 70% of after-completed value (ACV). Your final numbers depend on the site, the budget and the plan, and are set in underwriting.",
+        ],
+        points: [
+          { title: "Entitled land", text: "Up to 50% of the acquisition cost of land that is ready to build." },
+          { title: "Horizontal development", text: "Up to 75% of site work such as grading, utilities and roads." },
+          { title: "Vertical construction", text: "Up to 100% of the cost of the structure itself." },
+          { title: "Land you already own", text: "Reimbursement of cost basis on free-and-clear land returns capital already in the site." },
+        ],
+        image: { src: "/images/about/new-build.jpg", alt: "Newly built three-story residential building at dusk" },
+      },
+      {
+        id: "projects-we-finance",
+        heading: "Projects We Finance",
+        paragraphs: [
+          "We lend on investor-owned residential projects: single-family spec homes, multifamily buildings, scattered-site developments and subdivisions. The project needs to be shovel-ready, which means your plans and entitlements are in place when you come to us.",
+          "If your project is a heavy renovation rather than a new build, a [hard money loan](/hard-money-loans) or an [ARV loan](/arv-loans) is usually the better fit. Compare every option on our [loan programs page](/loan-programs).",
+        ],
+      },
+      {
+        id: "how-draws-work",
+        heading: "How Construction Draws Work",
+        paragraphs: [
+          "Construction funds are released in stages as work is completed, not as one lump sum at closing. You pay for a completed phase, request a draw, and once it is reviewed the funds are released, in as little as 3 business days.",
+          "Plan your cash flow around that cycle. Subcontractor payment timing and the sequence of your budget matter as much as the loan amount, so walk us through your schedule before you close.",
+        ],
+      },
+    ],
+    steps: {
+      heading: "From Site to Stabilized in Four Steps",
+      items: [
+        { title: "Share the project", text: "Send the site address, plans, budget and timeline." },
+        { title: "Get your terms", text: "We review the deal in-house and size each stage of the budget." },
+        { title: "Close and build", text: "Close the loan, start work and request draws as phases are completed." },
+        { title: "Sell or refinance", text: "Sell the finished property or move it onto a 30-year [DSCR loan](/dscr-loans)." },
+      ],
+    },
+    compare: {
+      heading: "Construction Loan vs. Fix and Flip Loan",
+      intro: "Both fund work in stages. The difference is whether a building already exists.",
+      columns: ["", "Ground-up construction", "Hard money fix & flip"],
+      rows: [
+        ["Starting point", "Entitled land, ready to build", "Existing property to renovate"],
+        ["Leverage", "Up to 90% LTC", "Up to 100% LTC, ARV capped"],
+        ["How funds release", "Draws as phases are completed", "Purchase at closing, rehab in draws"],
+        ["Learn more", "You are here", "[Hard money loans](/hard-money-loans)"],
+      ],
+    },
+    faqs: [
+      { q: "How much can I borrow for a ground-up construction project?", a: "Up to 90% of total project cost and up to 70% of after-completed value, with separate limits for land, horizontal development and vertical construction. Final terms are set in underwriting." },
+      { q: "Do construction loans cover the land?", a: "Yes. We finance up to 50% of the acquisition of entitled land. If you already own the land free and clear, reimbursement of your cost basis may be available." },
+      { q: "How fast are construction draws funded?", a: "Draws can be funded in as little as 3 business days once the completed work has been reviewed." },
+      { q: "What types of projects qualify?", a: "Investor residential projects including single-family homes, multifamily buildings, scattered-site developments and subdivisions." },
+      { q: "Does my project need to be shovel-ready?", a: "Yes. This program is for shovel-ready projects, so plans and entitlements should be in place." },
+      { q: "Can I build a home to live in?", a: "No. Our loans are business-purpose financing for non-owner-occupied investment property." },
+      { q: "What happens when construction is finished?", a: "Most investors sell the finished property or refinance into a 30-year DSCR rental loan." },
+      { q: "Where do you offer construction loans?", a: "In all 50 states and Washington, D.C." },
+    ],
+    related: ["bridge-loans", "multifamily-bridge", "dscr-loans"],
+  },
+  {
+    slug: "multifamily-bridge",
+    path: "/loan-programs/multifamily-bridge",
+    name: "Multifamily Bridge Loans",
+    tag: "5–10 Unit Value-Add",
+    icon: "building",
+    meta: {
+      title: "Multifamily Bridge Loans | Hedge Wealth Capital",
+      description:
+        "Multifamily bridge loans for 5–10 unit value-add deals: purchase and rehab financing up to 90% LTC, no appraisal required, closings in as little as 7 days.",
+      keywords: ["multifamily bridge loans", "apartment bridge loans", "value add multifamily financing", "5-10 unit property loans"],
+    },
+    hero: {
+      eyebrow: "Value-Add Apartment Financing",
+      title: "Multifamily Bridge",
+      accent: "Loans for Investors",
+      intro:
+        "Buy an underperforming 5–10 unit building, renovate it and bring rents to market. Our multifamily bridge loans look at your business plan, so current vacancy doesn't stop the deal.",
+      image: { src: "/images/multifamily.jpg", alt: "Multifamily apartment building financed with a bridge loan" },
+      chips: [
+        { label: "Up to 90% LTC", note: "Purchase + renovation" },
+        { label: "No Appraisal", note: "Required on this program" },
+      ],
+    },
+    stats: [
+      { value: "5–10", label: "Unit properties" },
+      { value: "90%", label: "Loan-to-cost" },
+      { value: "7 Days", label: "Closings as fast as" },
+      { value: "No", label: "Appraisal required" },
+    ],
+    sections: [
+      {
+        id: "why-bridge-for-multifamily",
+        heading: "Why Value-Add Multifamily Needs Bridge Financing",
+        paragraphs: [
+          "Long-term lenders underwrite the rents a building collects today. That is a problem when your whole plan is to change those rents. A half-empty building with dated units often can't qualify for a permanent loan until after the work you need the money to do.",
+          "A multifamily bridge loan solves that sequence. Current cash flow and DSCR are not considered on this program, so the loan can fund the purchase and the renovation while you stabilize the property.",
+        ],
+        points: [
+          { title: "Purchase and rehab", text: "One loan for buying the building and renovating the units." },
+          { title: "Refinance for renovation", text: "Already own the property? Refinance it to fund the upgrades." },
+          { title: "Vacancy is workable", text: "Current cash flow and DSCR are not part of the decision." },
+          { title: "Speed to close", text: "No appraisal required, with closings in as little as 7 days." },
+        ],
+        image: { src: "/images/services/portfolio-townhomes.jpg", alt: "Row of multi-unit residential townhomes" },
+      },
+      {
+        id: "who-its-for",
+        heading: "Who This Loan Is For",
+        paragraphs: [
+          "This program is built for experienced investors taking on purchase and rehab projects on 5–10 unit properties, with the goal of maximizing market rents. Bring your renovation scope, your rent assumptions and your exit plan.",
+          "Smaller or simpler deal? A [fix and flip loan](/hard-money-loans) may suit a single-family renovation, and [general bridge financing](/bridge-loans) covers other time-sensitive acquisitions. See them side by side on our [loan programs page](/loan-programs).",
+        ],
+      },
+    ],
+    steps: {
+      heading: "The Value-Add Path",
+      items: [
+        { title: "Buy", text: "Acquire the building with purchase and rehab funds from one lender." },
+        { title: "Renovate", text: "Upgrade units and common areas on your planned scope and budget." },
+        { title: "Lease up", text: "Fill vacancies and bring rents to market." },
+        { title: "Exit", text: "Sell, or refinance onto a [DSCR loan](/dscr-loans) or [portfolio financing](/rental-portfolio-loans)." },
+      ],
+    },
+    compare: {
+      heading: "Multifamily Bridge vs. DSCR Rental Loan",
+      intro: "Many investors use both: the bridge loan to stabilize, then a DSCR loan to hold.",
+      columns: ["", "Multifamily bridge", "DSCR rental loan"],
+      rows: [
+        ["Best stage", "Before stabilization", "After the property is rented"],
+        ["Qualifies on", "Your business plan", "The property's rental income"],
+        ["Loan type", "Short-term", "30-year fixed"],
+        ["Learn more", "You are here", "[DSCR loans](/dscr-loans)"],
+      ],
+    },
+    faqs: [
+      { q: "What is a multifamily bridge loan?", a: "It is short-term financing that funds the purchase and renovation of an apartment building until it is stabilized and can be sold or refinanced." },
+      { q: "What size properties do you finance?", a: "This program is for 5–10 unit properties." },
+      { q: "Does current occupancy matter?", a: "Current cash flow and DSCR are not considered on this program, so value-add properties can qualify on the business plan." },
+      { q: "Do I need an appraisal?", a: "No appraisal is required on our multifamily bridge program." },
+      { q: "How fast can you close?", a: "Multifamily bridge loans can close in as little as 7 days, depending on the deal and how quickly documents are provided." },
+      { q: "Can I refinance a building I already own?", a: "Yes. The program is also available to refinance owned properties for renovation." },
+      { q: "Is this program for first-time investors?", a: "It is designed for experienced investors. If you are newer to investing, talk to us about which program fits your project." },
+      { q: "How do I exit the loan?", a: "Most investors sell the stabilized property or refinance into a 30-year DSCR loan or rental portfolio financing." },
+    ],
+    related: ["bridge-loans", "dscr-loans", "ground-up-construction"],
   },
 ];
 

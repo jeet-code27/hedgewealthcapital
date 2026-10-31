@@ -5,7 +5,7 @@ import { getPublishedPosts } from "@/lib/posts";
 import { site } from "@/lib/site";
 
 // Fixed date keeps the sitemap static; bump it when page content changes.
-const updated = "2026-10-27";
+const updated = "2026-10-31";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getPublishedPosts();
@@ -13,6 +13,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: site.url, lastModified: updated, changeFrequency: "weekly", priority: 1 },
     { url: `${site.url}/about-hedge-wealth-capital`, lastModified: updated, changeFrequency: "monthly", priority: 0.7 },
     { url: `${site.url}/contact-us`, lastModified: updated, changeFrequency: "yearly", priority: 0.6 },
+    { url: `${site.url}/loan-programs`, lastModified: updated, changeFrequency: "monthly", priority: 0.9 },
     { url: `${site.url}/areas-we-serve`, lastModified: updated, changeFrequency: "monthly", priority: 0.8 },
     { url: `${site.url}/brokers`, lastModified: updated, changeFrequency: "monthly", priority: 0.7 },
     { url: `${site.url}/blog`, lastModified: updated, changeFrequency: "weekly", priority: 0.6 },

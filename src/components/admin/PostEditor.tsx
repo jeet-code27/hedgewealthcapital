@@ -230,7 +230,7 @@ export default function PostEditor({ id, initial }: { id?: string; initial?: Pos
             <div className="mb-4 flex items-center justify-between">
               <div>
                 <h2 className="font-extrabold">FAQs</h2>
-                <p className="text-xs text-muted">Shown at the end of the post and output as FAQPage schema for Google rich results.</p>
+                <p className="text-xs text-muted">Shown at the end of the post and output as FAQPage schema.</p>
               </div>
               <Button variant="secondary" onClick={() => set("faqs", [...form.faqs, { question: "", answer: "" }])}>
                 <Plus className="size-4" /> Add FAQ

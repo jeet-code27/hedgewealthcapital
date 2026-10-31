@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   openGraph: { type: "website", siteName: site.name, locale: "en_US" },
   twitter: { card: "summary_large_image" },
-  title: "Private Money Loans for Real Estate Investors | Hedge Wealth Capital",
+  title: "Private Money Loans for Investors | Hedge Wealth Capital",
   description:
-    "Private money loans for real estate investors: up to 100% LTC fix & flip, ground-up construction, multifamily, and 30-year DSCR rental loans. Same-day approval, close in 5–10 business days.",
+    "Up to 100% LTC fix & flip, ground-up construction, multifamily and 30-year DSCR rental loans. Same-day approval, close in 5–10 business days.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

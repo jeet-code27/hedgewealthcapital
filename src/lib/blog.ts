@@ -19,7 +19,7 @@ export type BlogPost = {
 };
 
 export const blogMeta = {
-  title: "Blog & News | Hedge Wealth Capital",
+  title: "Real Estate Financing Guides & News | Hedge Wealth Capital",
   description:
     "Company news, new loan products and insights for real estate investors from Hedge Wealth Capital, a direct private lender in all 50 states.",
   intro:

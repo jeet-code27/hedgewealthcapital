@@ -35,7 +35,7 @@ export default function ServiceHero({ page }: { page: ServicePage }) {
               Home
             </Link>
             <span className="text-leaf-600">/</span>
-            <Link href="/#loan-programs" className="transition hover:text-navy">
+            <Link href="/loan-programs" className="transition hover:text-navy">
               Loan Programs
             </Link>
             <span className="text-leaf-600">/</span>

@@ -14,6 +14,8 @@ const paths: Record<ServicePage["icon"], React.ReactNode> = {
   ),
   grid: <path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z" />,
   bridge: <path d="M2 18h20M4 18V9M20 18V9M4 9c3 4 13 4 16 0M8 18v-5M12 18v-4M16 18v-5" />,
+  crane: <path d="M6 21V5M3 21h6M6 5h15M6 5l-3 3M6 5l4-3 4 3M18 5v4M16 9h4v3h-4zM6 9l4-4M6 13l4-4" />,
+  building: <path d="M4 21V5a2 2 0 012-2h8a2 2 0 012 2v16M16 9h3a1 1 0 011 1v11M2 21h20M8 7h1M11 7h1M8 11h1M11 11h1M8 15h1M11 15h1" />,
 };
 
 export default function ServiceIcon({ icon, className = "size-6" }: { icon: ServicePage["icon"]; className?: string }) {

@@ -6,7 +6,7 @@ import { MapSilhouette } from "@/components/area/AreaMap";
 import { areas } from "@/lib/areas";
 
 export const metadata: Metadata = {
-  title: "Areas We Serve | Hard Money & DSCR Lending by Market | Hedge Wealth Capital",
+  title: "Areas We Serve | Hard Money & DSCR Lending by Market",
   description:
     "Hedge Wealth Capital lends in all 50 states and D.C. Explore local hard money and DSCR loan pages for New York City, Connecticut, Worcester County, Texas, Florida, Georgia, North Carolina and Colorado.",
   alternates: { canonical: "/areas-we-serve" },

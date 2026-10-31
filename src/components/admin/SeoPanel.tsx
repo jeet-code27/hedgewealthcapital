@@ -42,7 +42,7 @@ export function seoChecks({ title, slug, excerpt, content, seo, imageAlt, hasIma
     { ok: external >= 1 ? true : "warn", text: `${external} outbound links to trusted sources` },
     { ok: hasImage && Boolean(imageAlt), text: hasImage ? (imageAlt ? "Featured image has alt text" : "Add alt text to the featured image") : "Add a featured image" },
     { ok: imgsNoAlt === 0, text: imgs.length ? `${imgs.length - imgsNoAlt}/${imgs.length} images in the article have alt text` : "No inline images (optional)" },
-    { ok: faqCount >= 3 ? true : faqCount ? "warn" : false, text: `${faqCount} FAQs (3+ adds FAQ rich results via schema)` },
+    { ok: faqCount >= 3 ? true : faqCount ? "warn" : false, text: `${faqCount} FAQs (3+ answers common questions for readers and AI search)` },
     { ok: !seo.noIndex, text: seo.noIndex ? "Post is set to noindex: Google won't index it" : "Post can be indexed by search engines" },
   ];
 }

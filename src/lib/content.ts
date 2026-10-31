@@ -13,8 +13,14 @@ export const contact = {
   address: "1017 Turnpike St., Suite 31, Canton, MA 02021",
 };
 
+export const social = [
+  { label: "Facebook", href: "https://www.facebook.com/share/1FAriGTH3U", d: "M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8z" },
+  { label: "Instagram", href: "https://www.instagram.com/hedgewealthcapital", d: "M7.5 2h9A5.5 5.5 0 0122 7.5v9a5.5 5.5 0 01-5.5 5.5h-9A5.5 5.5 0 012 16.5v-9A5.5 5.5 0 017.5 2zm0 2A3.5 3.5 0 004 7.5v9A3.5 3.5 0 007.5 20h9a3.5 3.5 0 003.5-3.5v-9A3.5 3.5 0 0016.5 4h-9zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm5.3-3.3a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" },
+  { label: "X", href: "https://x.com/hedgewealth1", d: "M17.8 3h3.1l-6.8 7.8 8 10.2h-6.3l-4.9-6.4L5.3 21H2.2l7.3-8.3L1.8 3h6.4l4.4 5.9zm-1.1 16.2h1.7L7.4 4.7H5.6z" },
+];
+
 export const nav = [
-  { label: "Loan Programs", href: "/#loan-programs" },
+  { label: "Loan Programs", href: "/loan-programs" },
   { label: "Areas", href: "/areas-we-serve" },
   { label: "Brokers", href: "/brokers" },
   { label: "Blog", href: "/blog" },
@@ -92,14 +98,14 @@ export const strategies = [
     tag: "Ground Up",
     title: "Construction Loans",
     body: "The quick, smart, and effective alternative for financing up to 70% ACV with a 90% LTC prior to transitioning into a long-term loan.",
-    link: { label: "Explore Construction Financing", href: "/bridge-loans#construction-bridge" },
+    link: { label: "Explore Construction Loans", href: "/loan-programs/ground-up-construction" },
   },
   {
     key: "multifamily",
     tag: "Multifamily",
     title: "Multifamily Properties Loan",
     body: "For experienced investors who seek purchase and rehab financing for 5–10 unit properties to maximize market rents. Also available to refinance owned properties for renovation.",
-    link: { label: "Explore Bridge Loans", href: "/bridge-loans" },
+    link: { label: "Explore Multifamily Bridge Loans", href: "/loan-programs/multifamily-bridge" },
   },
   {
     key: "dscr",

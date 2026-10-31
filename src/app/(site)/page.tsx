@@ -9,7 +9,7 @@ import About from "@/components/sections/About";
 import Broker from "@/components/sections/Broker";
 import Faq from "@/components/sections/Faq";
 import Prequalify from "@/components/sections/Prequalify";
-import { contact, faqs } from "@/lib/content";
+import { contact, faqs, social } from "@/lib/content";
 import type { Metadata } from "next";
 import { site } from "@/lib/site";
 
@@ -33,6 +33,7 @@ const jsonLd = [
     areaServed: { "@type": "Country", name: "United States" },
     address: { "@type": "PostalAddress", streetAddress: "1017 Turnpike St., Suite 31", addressLocality: "Canton", addressRegion: "MA", postalCode: "02021", addressCountry: "US" },
     contactPoint: { "@type": "ContactPoint", telephone: contact.phone, email: contact.email, contactType: "sales", areaServed: "US", availableLanguage: "English" },
+    sameAs: social.map((s) => s.href),
   },
   {
     "@context": "https://schema.org",

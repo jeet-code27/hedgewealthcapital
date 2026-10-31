@@ -17,9 +17,6 @@ const nextConfig: NextConfig = {
       ...posts.map((p) => ({ source: `/${p.slug}`, destination: `/blog/${p.slug}`, permanent: true })),
       { source: "/loan-programs/rental-loans", destination: "/dscr-loans", permanent: true },
       { source: "/loan-programs/fix-flip-loans", destination: "/hard-money-loans", permanent: true },
-      { source: "/loan-programs/ground-up-construction", destination: "/bridge-loans", permanent: true },
-      { source: "/loan-programs/multifamily-bridge", destination: "/bridge-loans", permanent: true },
-      { source: "/loan-programs", destination: "/#loan-programs", permanent: true },
     ];
   },
   turbopack: {

@@ -43,7 +43,9 @@ export function AreaMarkets({ page }: { page: AreaPage }) {
                   </span>
                   <h3 className="text-xl font-extrabold text-navy">{m.name}</h3>
                 </div>
-                <p className="mt-4 text-[15px] leading-relaxed text-muted">{m.note}</p>
+                <p className="mt-4 text-[15px] leading-relaxed text-muted">
+                  <RichText text={m.note} />
+                </p>
                 <ul className="mt-5 flex flex-wrap gap-2">
                   {m.spots.map((s) => (
                     <li key={s} className="rounded-full bg-navy-50 px-3 py-1 text-xs font-bold text-navy/80">

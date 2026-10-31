@@ -52,7 +52,7 @@ function JsonLd({ slug }: { slug: ServiceSlug }) {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: site.url },
-        { "@type": "ListItem", position: 2, name: "Loan Programs", item: `${site.url}/#loan-programs` },
+        { "@type": "ListItem", position: 2, name: "Loan Programs", item: `${site.url}/loan-programs` },
         { "@type": "ListItem", position: 3, name: page.name, item: url },
       ],
     },

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { certifications, contact, footer, nav } from "@/lib/content";
+import { certifications, contact, footer, nav, social } from "@/lib/content";
 import { services } from "@/lib/services";
 import { areas } from "@/lib/areas";
 
@@ -24,6 +24,23 @@ export default function Footer() {
               className="h-20 w-auto brightness-0 invert"
             />
             <p className="mt-6 max-w-xs leading-relaxed text-white/60">{footer.brand}</p>
+            <ul className="mt-6 flex gap-2.5">
+              {social.map((s) => (
+                <li key={s.label}>
+                  <a
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Hedge Wealth Capital on ${s.label}`}
+                    className="grid size-10 place-items-center rounded-full border border-white/15 bg-white/[0.04] text-white/80 transition hover:-translate-y-0.5 hover:border-leaf hover:bg-leaf hover:text-navy"
+                  >
+                    <svg className="size-[18px]" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                      <path d={s.d} />
+                    </svg>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div>

@@ -7,11 +7,12 @@
  */
 import type { ServiceSlug } from "@/lib/services";
 
-export type MapKey = "TX" | "FL" | "GA" | "NC" | "CO" | "NYC" | "CT" | "WOR";
+export type MapKey = "TX" | "FL" | "GA" | "NC" | "CO" | "NYC" | "CT" | "WOR" | "MA";
 
 export type AreaSlug =
   | "new-york"
   | "connecticut"
+  | "massachusetts"
   | "worcester-county-ma"
   | "texas-hard-money"
   | "texas-dscr"
@@ -63,9 +64,9 @@ export const areas: AreaPage[] = [
     kind: "Hard Money & DSCR",
     map: "NYC",
     meta: {
-      title: "Hard Money & DSCR Lenders in New York City | All 5 Boroughs | HWC",
+      title: "Hard Money & DSCR Lenders in New York City | HWC",
       description:
-        "Private hard money and DSCR loans across Manhattan, Brooklyn, Queens, the Bronx and Staten Island. Up to 100% of purchase and rehab, 30-year rental loans, same-day approvals.",
+        "Hard money and DSCR loans in Manhattan, Brooklyn, Queens, the Bronx and Staten Island. Up to 100% of purchase and rehab, 30-year rental loans.",
       keywords: ["hard money lenders new york city", "dscr loans nyc", "private money lenders new york", "hard money lenders brooklyn", "fix and flip loans queens"],
     },
     hero: {
@@ -141,9 +142,9 @@ export const areas: AreaPage[] = [
     kind: "Hard Money & DSCR",
     map: "CT",
     meta: {
-      title: "Connecticut Hard Money & DSCR Lenders | Bridgeport to Hartford | HWC",
+      title: "Connecticut Hard Money & DSCR Lenders | HWC",
       description:
-        "Hard money and DSCR loans for Connecticut investors in Bridgeport, New Haven, Stamford, Hartford, Waterbury and statewide. Up to 100% of purchase and rehab and 30-year rental loans.",
+        "Hard money and DSCR loans in Bridgeport, New Haven, Stamford, Hartford and statewide. Up to 100% of purchase and rehab and 30-year rental loans.",
       keywords: ["hard money lenders connecticut", "dscr loans ct", "private mortgage lenders connecticut", "fix and flip loans bridgeport", "hard money lenders new haven"],
     },
     hero: {
@@ -213,6 +214,85 @@ export const areas: AreaPage[] = [
   },
 
   {
+    slug: "massachusetts",
+    path: "/massachusetts/hard-money-dscr-lenders",
+    region: "Massachusetts",
+    short: "MA",
+    kind: "Hard Money & DSCR",
+    map: "MA",
+    meta: {
+      title: "Massachusetts Hard Money & DSCR Lenders | HWC",
+      description:
+        "Massachusetts hard money and DSCR loans from a lender based in Canton, MA. Up to 100% of purchase and rehab and 30-year rental loans, Boston to the Berkshires.",
+      keywords: ["hard money lender massachusetts", "fix and flip loans massachusetts", "dscr loans massachusetts", "private money lenders boston", "investor construction loans massachusetts"],
+    },
+    hero: {
+      eyebrow: "Our Home State",
+      title: "Massachusetts Hard Money &",
+      accent: "DSCR Lenders",
+      intro:
+        "Massachusetts is where our office is. From our Canton location we finance fix and flips, multi-family renovations and long-term rentals from Greater Boston to the Pioneer Valley and the South Coast.",
+    },
+    stats: [
+      { value: "100%", label: "LTC on purchase + rehab" },
+      { value: "80%", label: "Max LTV on DSCR purchase" },
+      { value: "5–10", label: "Business days to close" },
+      { value: "Canton", label: "Massachusetts office" },
+    ],
+    markets: {
+      heading: "Where We Lend Across Massachusetts",
+      intro: "Each region has its own housing stock and investor playbook. These are the markets we hear about most.",
+      items: [
+        { name: "Greater Boston", pin: "Boston", note: "Two- and three-family renovations in a high-cost, low-inventory market.", spots: ["Dorchester", "Roxbury", "East Boston", "Hyde Park", "Mattapan"] },
+        { name: "South Shore & Brockton", pin: "Brockton", note: "Multi-family rentals and single-family flips close to our Canton office.", spots: ["Brockton", "Quincy", "Randolph", "Weymouth"] },
+        { name: "Merrimack Valley", pin: "Lowell", note: "Older mill-city multi-families suited to renovate-and-hold plans.", spots: ["Lowell", "Lawrence", "Haverhill", "Methuen"] },
+        { name: "South Coast", pin: "New Bedford", note: "Triple-deckers and rental properties at lower entry prices than Boston.", spots: ["New Bedford", "Fall River", "Taunton"] },
+        { name: "Central Massachusetts", pin: "Worcester", note: "Triple-deckers and student rentals. See our [Worcester County page](/worcester-county-ma/hard-money-dscr-lenders).", spots: ["Worcester", "Fitchburg", "Leominster"] },
+        { name: "Pioneer Valley & Berkshires", pin: "Springfield", note: "Rental-focused investing and smaller-town renovations in the western part of the state.", spots: ["Springfield", "Holyoke", "Chicopee", "Pittsfield"] },
+      ],
+    },
+    programs: {
+      heading: "Massachusetts Loan Programs",
+      intro: "Match the loan to your plan for the property.",
+      items: [
+        { service: "hard-money-loans", text: "Finance up to 100% of purchase and rehab on Massachusetts flips, subject to an after-repair value cap." },
+        { service: "dscr-loans", text: "Hold rentals on a 30-year fixed loan qualified on rent, with no tax returns or W-2s." },
+        { service: "ground-up-construction", text: "Fund entitled land, site work and vertical construction on shovel-ready projects." },
+        { service: "multifamily-bridge", text: "Buy and renovate 5–10 unit buildings before the rents are stabilized." },
+      ],
+    },
+    local: {
+      heading: "What Massachusetts Investors Should Plan For",
+      paragraphs: [
+        "Much of the state's housing is old, so plan for the Massachusetts Lead Law when children under six will live in a pre-1978 rental. Inspection and abatement can affect both your rehab budget and your timeline, so address them before you price the deal.",
+        "Closings here run through attorneys, who clear title and obtain municipal lien certificates. Build that step into your schedule, and request the municipal lien certificate early so unpaid charges don't surface at the closing table.",
+      ],
+      notes: [
+        { title: "Two- and three-families", text: "A core Massachusetts asset type for both renovation and long-term hold." },
+        { title: "Local permitting", text: "Rules and timelines vary by city and town, so check them against your schedule." },
+        { title: "In-state team", text: "Talk to a lender based here, at our office in Canton, MA." },
+      ],
+    },
+    steps: [
+      { title: "Tell us the deal", text: "Share the address, price and your renovation or rental plan." },
+      { title: "Approval same day", text: "Decisions are made in-house, typically the same day." },
+      { title: "Attorney and title", text: "Your attorney clears title and the municipal lien certificate." },
+      { title: "Close", text: "Most loans close in 5 to 10 business days." },
+    ],
+    faqs: [
+      { q: "Are you a Massachusetts hard money lender?", a: "Yes. Our office is at 1017 Turnpike St., Suite 31, Canton, MA 02021, and we also lend in all 50 states and Washington, D.C." },
+      { q: "Do you finance fix and flips in Boston?", a: "Yes. We finance up to 100% of the purchase price and up to 100% of the rehab budget on eligible investment properties, subject to an after-repair value cap." },
+      { q: "Do you offer DSCR loans in Massachusetts?", a: "Yes. Our DSCR loans are 30-year fixed and qualify on the property's rental income, with up to 80% LTV on purchases, a 680+ FICO and no tax returns or W-2s." },
+      { q: "Do you finance triple-deckers?", a: "Yes. Two- and three-family homes can be financed for renovation with a fix and flip loan or for long-term rental with a DSCR loan." },
+      { q: "Can I get a construction loan in Massachusetts?", a: "Yes. Shovel-ready residential projects can be financed up to 90% of total cost, covering land, horizontal development and vertical construction." },
+      { q: "Can I use these loans for my own home?", a: "No. Our loans are business-purpose financing for non-owner-occupied investment property." },
+      { q: "How long does a Massachusetts closing take?", a: "Most loans close in 5 to 10 business days once title, the municipal lien certificate and valuation are complete." },
+      { q: "Do I need to plan for lead paint?", a: "If the home was built before 1978 and children under six will live there, the Massachusetts Lead Law can require inspection and abatement, so include it in your budget." },
+    ],
+    nearby: ["worcester-county-ma", "connecticut", "new-york"],
+  },
+
+  {
     slug: "worcester-county-ma",
     path: "/worcester-county-ma/hard-money-dscr-lenders",
     region: "Worcester County, MA",
@@ -222,7 +302,7 @@ export const areas: AreaPage[] = [
     meta: {
       title: "Hard Money & DSCR Lenders in Worcester County, MA | HWC",
       description:
-        "Massachusetts-based private lender funding Worcester, Leominster, Fitchburg, Gardner, Shrewsbury and all of Worcester County. Triple-decker rehabs, fix and flip and 30-year rental loans.",
+        "Massachusetts-based lender funding Worcester, Leominster, Fitchburg and all of Worcester County. Triple-decker rehabs, flips and 30-year rental loans.",
       keywords: ["hard money lenders worcester ma", "dscr loans worcester county", "private money lenders central mass", "fix and flip loans leominster", "fitchburg investment property loans"],
     },
     hero: {
@@ -288,7 +368,7 @@ export const areas: AreaPage[] = [
       { q: "Do I need to budget for lead paint?", a: "If the home was built before 1978 and children under six will live there, the Massachusetts Lead Law can require inspection and abatement, so include it in your plan." },
       { q: "Where is Hedge Wealth Capital located?", a: "Our office is at 1017 Turnpike St., Suite 31, Canton, MA 02021." },
     ],
-    nearby: ["connecticut", "new-york", "north-carolina-hard-money"],
+    nearby: ["massachusetts", "connecticut", "new-york"],
   },
 
   {
@@ -299,9 +379,9 @@ export const areas: AreaPage[] = [
     kind: "Hard Money",
     map: "TX",
     meta: {
-      title: "Hard Money Lenders in Texas | Fix and Flip Loans | Hedge Wealth Capital",
+      title: "Hard Money Lenders in Texas | Fix and Flip Loans | HWC",
       description:
-        "Texas hard money lenders funding fix and flip and bridge loans in Dallas-Fort Worth, Houston, Austin, San Antonio and statewide. Up to 100% of purchase and rehab, same-day approvals.",
+        "Texas fix and flip and bridge loans in Dallas-Fort Worth, Houston, Austin, San Antonio and statewide. Up to 100% of purchase and rehab, same-day approvals.",
       keywords: ["hard money lenders texas", "texas hard money lenders", "fix and flip loans texas", "bridge loans texas", "texas hard money loans"],
     },
     hero: {
@@ -373,7 +453,7 @@ export const areas: AreaPage[] = [
     kind: "DSCR",
     map: "TX",
     meta: {
-      title: "Texas DSCR Loans | 30-Year Rental Property Loans | Hedge Wealth Capital",
+      title: "Texas DSCR Loans | 30-Year Rental Property Loans | HWC",
       description:
         "Texas DSCR loans for rental property in Houston, Dallas, San Antonio, Austin and statewide. Qualify on rent with no tax returns, up to 80% LTV and 680+ FICO.",
       keywords: ["dscr loans texas", "texas dscr lenders", "dscr loan texas", "investment property loans texas", "rental property loans texas"],
@@ -446,9 +526,9 @@ export const areas: AreaPage[] = [
     kind: "Hard Money",
     map: "FL",
     meta: {
-      title: "Florida Hard Money Lenders | Fix & Flip and Bridge Loans | HWC",
+      title: "Florida Hard Money Lenders | Fix & Flip Loans | HWC",
       description:
-        "Florida hard money loans for flips and bridge deals in Miami, Tampa, Orlando, Jacksonville and statewide. Up to 100% of purchase and rehab with same-day approvals.",
+        "Florida hard money loans for flips and bridge deals in Miami, Tampa, Orlando and statewide. Up to 100% of purchase and rehab with same-day approvals.",
       keywords: ["hard money lenders florida", "florida hard money lenders", "fix and flip loans florida", "hard money loans florida", "bridge loans florida"],
     },
     hero: {
@@ -520,7 +600,7 @@ export const areas: AreaPage[] = [
     kind: "DSCR",
     map: "FL",
     meta: {
-      title: "Florida DSCR Loans | Long-Term Rental Financing | Hedge Wealth Capital",
+      title: "Florida DSCR Loans | Long-Term Rental Financing | HWC",
       description:
         "Florida DSCR loans for long-term and short-term rentals in Orlando, Tampa, Jacksonville, Miami and statewide. No tax returns, up to 80% LTV, 30-year fixed.",
       keywords: ["dscr loans florida", "florida dscr lenders", "dscr loan florida", "florida investment property loans", "short term rental dscr florida"],
@@ -593,7 +673,7 @@ export const areas: AreaPage[] = [
     kind: "Hard Money",
     map: "GA",
     meta: {
-      title: "Hard Money Lenders in Georgia | Atlanta Fix & Flip Loans | HWC",
+      title: "Georgia Hard Money Lenders | Atlanta Fix & Flip | HWC",
       description:
         "Georgia hard money loans for fix and flip investors in Atlanta, Savannah, Augusta, Macon and statewide. Up to 100% of purchase and rehab, same-day approvals.",
       keywords: ["hard money lenders georgia", "hard money lenders atlanta", "fix and flip loans georgia", "georgia hard money loans", "atlanta fix and flip lenders"],
@@ -666,7 +746,7 @@ export const areas: AreaPage[] = [
     kind: "DSCR",
     map: "GA",
     meta: {
-      title: "Georgia DSCR Loans | Atlanta Rental Property Loans | Hedge Wealth Capital",
+      title: "Georgia DSCR Loans | Atlanta Rental Property Loans | HWC",
       description:
         "Georgia DSCR loans for rental investors in metro Atlanta, Savannah, Augusta and statewide. Qualify on rent, no tax returns, up to 80% LTV and 30-year fixed.",
       keywords: ["dscr loans georgia", "georgia dscr lenders", "dscr loan atlanta", "rental property loans georgia", "atlanta investment property loans"],
@@ -740,7 +820,7 @@ export const areas: AreaPage[] = [
     meta: {
       title: "North Carolina Hard Money Lenders | Fix & Flip Loans | HWC",
       description:
-        "North Carolina hard money loans for flips in Charlotte, Raleigh-Durham, Greensboro, Winston-Salem and statewide. Up to 100% of purchase and rehab, same-day approvals.",
+        "North Carolina hard money loans for flips in Charlotte, Raleigh-Durham, Greensboro and statewide. Up to 100% of purchase and rehab, same-day approvals.",
       keywords: ["hard money lenders north carolina", "hard money lenders charlotte nc", "fix and flip loans north carolina", "raleigh hard money lenders", "nc hard money loans"],
     },
     hero: {
@@ -887,7 +967,7 @@ export const areas: AreaPage[] = [
     meta: {
       title: "Colorado Hard Money Lenders | Denver Fix & Flip Loans | HWC",
       description:
-        "Colorado hard money loans for flips and bridge deals in Denver, Colorado Springs, Aurora, Fort Collins and statewide. Up to 100% of purchase and rehab, same-day approvals.",
+        "Colorado hard money loans for flips and bridge deals in Denver, Colorado Springs, Aurora and statewide. Up to 100% of purchase and rehab, same-day approvals.",
       keywords: ["hard money lenders colorado", "hard money lenders denver", "fix and flip loans colorado", "colorado hard money loans", "colorado springs hard money"],
     },
     hero: {
