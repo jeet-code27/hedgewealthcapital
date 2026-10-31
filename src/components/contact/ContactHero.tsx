@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { contactChannels, contactHero } from "@/lib/contact-content";
 import { contact } from "@/lib/content";
+import PageTitle from "@/components/PageTitle";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -154,7 +155,7 @@ export default function ContactHero() {
             {contactHero.eyebrow}
           </motion.span>
 
-          <h1 className="mt-6 text-[2.5rem] leading-[1.03] font-extrabold tracking-[-0.035em] text-navy sm:text-6xl xl:text-7xl">
+          <PageTitle className="mt-6 text-[2.5rem] leading-[1.03] font-extrabold tracking-[-0.035em] text-navy sm:text-6xl xl:text-7xl">
             {words.map(({ w, a }, i) => (
               <span key={i} className="inline-block overflow-hidden pb-[0.1em] align-bottom">
                 <motion.span
@@ -168,7 +169,7 @@ export default function ContactHero() {
                 </motion.span>
               </span>
             ))}
-          </h1>
+          </PageTitle>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}

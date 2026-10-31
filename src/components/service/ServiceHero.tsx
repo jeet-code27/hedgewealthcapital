@@ -6,6 +6,7 @@ import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { contact } from "@/lib/content";
 import type { ServicePage } from "@/lib/services";
 import ServiceIcon from "./ServiceIcon";
+import PageTitle from "@/components/PageTitle";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -54,7 +55,7 @@ export default function ServiceHero({ page }: { page: ServicePage }) {
             {page.hero.eyebrow}
           </motion.span>
 
-          <h1 className="mt-6 text-[2.4rem] leading-[1.03] font-extrabold tracking-[-0.035em] text-navy sm:text-6xl xl:text-[4.2rem]">
+          <PageTitle className="mt-6 text-[2.4rem] leading-[1.03] font-extrabold tracking-[-0.035em] text-navy sm:text-6xl xl:text-[4.2rem]">
             {words.map(({ w, accent }, i) => (
               <span key={i} className="inline-block overflow-hidden pb-[0.1em] align-bottom">
                 <motion.span
@@ -68,7 +69,7 @@ export default function ServiceHero({ page }: { page: ServicePage }) {
                 </motion.span>
               </span>
             ))}
-          </h1>
+          </PageTitle>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { aboutHero } from "@/lib/about-content";
+import PageTitle from "@/components/PageTitle";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -53,7 +54,7 @@ export default function AboutHero() {
             {aboutHero.eyebrow}
           </motion.span>
 
-          <h1 className="mt-6 text-[2.6rem] leading-[1.02] font-extrabold tracking-[-0.035em] text-navy sm:text-6xl xl:text-7xl">
+          <PageTitle className="mt-6 text-[2.6rem] leading-[1.02] font-extrabold tracking-[-0.035em] text-navy sm:text-6xl xl:text-7xl">
             {titleWords.map((word, i) => {
               const accent = i >= 2;
               return (
@@ -70,7 +71,7 @@ export default function AboutHero() {
                 </span>
               );
             })}
-          </h1>
+          </PageTitle>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}

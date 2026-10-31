@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { hero } from "@/lib/content";
+import PageTitle from "@/components/PageTitle";
 
 const HeroScene = dynamic(() => import("@/components/three/HeroScene"), {
   ssr: false,
@@ -47,7 +48,7 @@ export default function Hero() {
             {hero.eyebrow}
           </motion.div>
 
-          <h1 className="mt-6 text-[2.6rem] leading-[1.02] font-extrabold tracking-[-0.035em] text-navy sm:text-6xl lg:text-[min(3.75rem,7svh)] xl:text-[min(4.6rem,7.6svh)]">
+          <PageTitle className="mt-6 text-[2.6rem] leading-[1.02] font-extrabold tracking-[-0.035em] text-navy sm:text-6xl lg:text-[min(3.75rem,7svh)] xl:text-[min(4.6rem,7.6svh)]">
             {titleWords.map((word, i) => {
               const accent = hero.accentWords.includes(word);
               return (
@@ -64,7 +65,7 @@ export default function Hero() {
                 </span>
               );
             })}
-          </h1>
+          </PageTitle>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}

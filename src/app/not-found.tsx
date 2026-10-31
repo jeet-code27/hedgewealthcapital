@@ -2,6 +2,7 @@ import Link from "next/link";
 import SiteLayout from "./(site)/layout";
 import ServiceIcon from "@/components/service/ServiceIcon";
 import { services } from "@/lib/services";
+import PageTitle from "@/components/PageTitle";
 
 // Stacked offsets give the numerals a solid extruded edge in brand green (same treatment as the LTC promo).
 const extrude = Array.from(
@@ -29,12 +30,12 @@ export default function NotFound() {
             <span className="inline-flex items-center gap-2 rounded-full border border-leaf/40 bg-leaf/10 px-3.5 py-1.5 text-xs font-extrabold tracking-[0.16em] text-leaf uppercase">
               Error 404
             </span>
-            <h1 className="mt-6 text-[2.4rem] leading-[1.05] font-extrabold tracking-[-0.035em] sm:text-6xl">
+            <PageTitle className="mt-6 text-[2.4rem] leading-[1.05] font-extrabold tracking-[-0.035em] sm:text-6xl">
               We Couldn&apos;t Find{" "}
               <span className="font-serif font-normal italic tracking-normal text-leaf">
                 That Page
               </span>
-            </h1>
+            </PageTitle>
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/75">
               Explore our loan programs or contact HWC to discuss your financing
               questions.

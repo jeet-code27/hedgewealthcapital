@@ -8,6 +8,7 @@ import ServiceIcon from "@/components/service/ServiceIcon";
 import { compareRows, hubFaqs, hubHero, hubMeta } from "@/lib/loan-programs";
 import { getService, services } from "@/lib/services";
 import { schemaPublisher, site } from "@/lib/site";
+import PageTitle from "@/components/PageTitle";
 
 export const metadata: Metadata = {
   title: hubMeta.title,
@@ -68,10 +69,10 @@ export default function LoanProgramsPage() {
           <Reveal>
             <span className="mt-6 inline-block text-sm font-bold tracking-[0.2em] text-leaf-600 uppercase">{hubHero.eyebrow}</span>
           </Reveal>
-          <h1 className="mt-4 max-w-4xl text-[2.6rem] leading-[1.02] font-extrabold tracking-[-0.035em] text-navy sm:text-6xl xl:text-7xl">
+          <PageTitle className="mt-4 max-w-4xl text-[2.6rem] leading-[1.02] font-extrabold tracking-[-0.035em] text-navy sm:text-6xl xl:text-7xl">
             <WordsReveal text={hubHero.title} />
             <WordsReveal text={hubHero.accent} className="font-serif font-normal italic tracking-normal text-leaf-600" delay={0.12} />
-          </h1>
+          </PageTitle>
           <Reveal delay={0.15}>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">{hubHero.intro}</p>
           </Reveal>

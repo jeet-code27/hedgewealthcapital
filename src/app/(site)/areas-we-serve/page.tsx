@@ -4,6 +4,7 @@ import Reveal, { WordsReveal } from "@/components/Reveal";
 import AboutCta from "@/components/about/AboutCta";
 import { MapSilhouette } from "@/components/area/AreaMap";
 import { areas } from "@/lib/areas";
+import PageTitle from "@/components/PageTitle";
 
 export const metadata: Metadata = {
   title: "Areas We Serve | Hard Money & DSCR Lending by Market",
@@ -34,10 +35,10 @@ export default function AreasPage() {
             <span className="text-leaf">/</span>
             <span className="text-white">Areas We Serve</span>
           </nav>
-          <h1 className="mt-6 max-w-4xl text-[2.5rem] leading-[1.03] font-extrabold tracking-[-0.035em] sm:text-6xl">
+          <PageTitle className="mt-6 max-w-4xl text-[2.5rem] leading-[1.03] font-extrabold tracking-[-0.035em] sm:text-6xl">
             <WordsReveal text="Local Lending," />
             <WordsReveal text="Nationwide Capital" className="font-serif font-normal italic tracking-normal text-leaf" delay={0.15} />
-          </h1>
+          </PageTitle>
           <Reveal delay={0.1}>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/75">
               We lend in all 50 states and Washington, D.C. These pages go deeper on the markets where our investors are most active.

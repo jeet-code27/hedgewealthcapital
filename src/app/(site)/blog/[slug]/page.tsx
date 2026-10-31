@@ -11,6 +11,7 @@ import { contact } from "@/lib/content";
 import { formatDate, getPostBySlug, getPublishedPosts } from "@/lib/posts";
 import { posts as legacyPosts } from "@/lib/blog";
 import { schemaPublisher, site } from "@/lib/site";
+import PageTitle from "@/components/PageTitle";
 
 export async function generateStaticParams() {
   const posts = await getPublishedPosts();
@@ -115,7 +116,7 @@ export default async function BlogPostPage({ params }: PageProps<"/blog/[slug]">
                 <span className="text-navy/25">•</span>
                 <span className="text-muted">{post.readingMinutes} min read</span>
               </div>
-              <h1 className="mt-5 text-[2rem] leading-[1.08] font-extrabold tracking-[-0.03em] text-navy sm:text-5xl">{post.title}</h1>
+              <PageTitle className="mt-5 text-[2rem] leading-[1.08] font-extrabold tracking-[-0.03em] text-navy sm:text-5xl">{post.title}</PageTitle>
               {post.excerpt && <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted">{post.excerpt}</p>}
             </Reveal>
           </div>

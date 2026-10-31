@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { contact } from "@/lib/content";
 import type { AreaPage } from "@/lib/areas";
 import AreaMap from "./AreaMap";
+import PageTitle from "@/components/PageTitle";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -53,7 +54,7 @@ export default function AreaHero({ page }: { page: AreaPage }) {
             <span className="rounded-full bg-white/10 px-3 py-1.5 text-xs font-bold text-white/80">{page.kind}</span>
           </motion.div>
 
-          <h1 className="mt-6 text-[2.4rem] leading-[1.03] font-extrabold tracking-[-0.035em] sm:text-6xl xl:text-[4.1rem]">
+          <PageTitle className="mt-6 text-[2.4rem] leading-[1.03] font-extrabold tracking-[-0.035em] sm:text-6xl xl:text-[4.1rem]">
             {words.map(({ w, a }, i) => (
               <span key={i} className="inline-block overflow-hidden pb-[0.1em] align-bottom">
                 <motion.span
@@ -67,7 +68,7 @@ export default function AreaHero({ page }: { page: AreaPage }) {
                 </motion.span>
               </span>
             ))}
-          </h1>
+          </PageTitle>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
