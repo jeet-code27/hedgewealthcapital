@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import Reveal, { WordsReveal } from "@/components/Reveal";
+import { track } from "@/lib/analytics";
 import { inquiryCopy, inquiryOptions } from "@/lib/contact-content";
 import { contact } from "@/lib/content";
 
@@ -135,6 +136,7 @@ export default function DealInquiry() {
       const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(f) });
       const data = await res.json().catch(() => ({}));
       if (res.ok && data.ok) {
+        track("generate_lead", { form_name: "deal_inquiry", loan_purpose: f.purpose });
         setStatus("success");
       } else if (res.status === 422 && data.errors) {
         setErrors(data.errors);

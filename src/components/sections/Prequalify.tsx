@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { AnimatePresence, motion, useMotionValue, useSpring } from "motion/react";
 import ImageSlot from "@/components/ImageSlot";
 import Reveal, { WordsReveal } from "@/components/Reveal";
+import { track } from "@/lib/analytics";
 import { contact, images, prequalify } from "@/lib/content";
 
 const PrequalifyScene = dynamic(() => import("@/components/three/PrequalifyScene"), { ssr: false });
@@ -124,6 +125,7 @@ function PrequalifyForm() {
       });
       const data = await res.json().catch(() => ({}));
       if (res.ok && data.ok) {
+        track("generate_lead", { form_name: "prequalify", loan_product: fields.loanProduct });
         setStatus("success");
         setFields(empty);
       } else if (res.status === 422 && data.errors) {

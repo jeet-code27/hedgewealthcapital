@@ -1,3 +1,4 @@
+import Analytics from "@/components/Analytics";
 import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -13,6 +14,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       <Footer />
       <PrequalifyTab />
       <CallButton />
+      <Analytics />
     </SmoothScroll>
   );
 }

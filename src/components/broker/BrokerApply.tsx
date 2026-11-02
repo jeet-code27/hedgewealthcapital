@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import Reveal, { WordsReveal } from "@/components/Reveal";
+import { track } from "@/lib/analytics";
 import { brokerForm } from "@/lib/broker-content";
 
 type Key =
@@ -68,8 +69,10 @@ export default function BrokerApply() {
     try {
       const res = await fetch("/api/broker", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(f) });
       const data = await res.json().catch(() => ({}));
-      if (res.ok && data.ok) setStatus("success");
-      else if (res.status === 422 && data.errors) {
+      if (res.ok && data.ok) {
+        track("generate_lead", { form_name: "broker_application" });
+        setStatus("success");
+      } else if (res.status === 422 && data.errors) {
         setErrors(data.errors);
         setStatus("idle");
       } else setStatus("error");
