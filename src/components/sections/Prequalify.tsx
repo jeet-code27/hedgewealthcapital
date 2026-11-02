@@ -15,10 +15,10 @@ type Fields = {
   email: string;
   phone: string;
   loanProduct: string;
-  referralSource: string;
+  creditScore: string;
 };
 
-const empty: Fields = { firstName: "", lastName: "", email: "", phone: "", loanProduct: "", referralSource: "" };
+const empty: Fields = { firstName: "", lastName: "", email: "", phone: "", loanProduct: "", creditScore: "" };
 
 function formatPhone(value: string) {
   const d = value.replace(/\D/g, "").slice(0, 10);
@@ -201,7 +201,29 @@ function PrequalifyForm() {
           </div>
 
           <SelectField id="loanProduct" label="Which loan product are you inquiring about?" value={fields.loanProduct} options={prequalify.loanProducts} error={errors.loanProduct} onChange={set("loanProduct")} />
-          <SelectField id="referralSource" label="How did you hear about us?" value={fields.referralSource} options={prequalify.referralSources} error={errors.referralSource} onChange={set("referralSource")} />
+          <fieldset>
+            <legend className="mb-2 block text-[13px] font-bold text-navy">What is your credit score?</legend>
+            <div className="grid gap-2.5 sm:grid-cols-2">
+              {prequalify.creditScores.map((score) => {
+                const selected = fields.creditScore === score;
+                return (
+                  <label
+                    key={score}
+                    className={`flex cursor-pointer items-center justify-between gap-3 rounded-2xl border px-4 py-3.5 text-[15px] font-semibold text-navy transition focus-within:ring-4 focus-within:ring-leaf/20 ${
+                      selected ? "border-leaf bg-leaf-100/70" : errors.creditScore ? "border-red-400 bg-navy-50/60" : "border-navy/10 bg-navy-50/60 hover:border-navy/30"
+                    }`}
+                  >
+                    {score}
+                    <input type="radio" name="creditScore" value={score} checked={selected} onChange={() => set("creditScore")(score)} className="sr-only" />
+                    <span aria-hidden className={`grid size-5 shrink-0 place-items-center rounded-full border-2 ${selected ? "border-leaf-600" : "border-navy/50"}`}>
+                      {selected && <span className="size-2.5 rounded-full bg-leaf-600" />}
+                    </span>
+                  </label>
+                );
+              })}
+            </div>
+            {errors.creditScore && <p className="mt-1.5 pl-1 text-xs font-semibold text-red-600">{errors.creditScore}</p>}
+          </fieldset>
 
           <p className="rounded-2xl bg-leaf-100/70 px-4 py-3 text-xs leading-relaxed text-navy/80">{prequalify.helper}</p>
 

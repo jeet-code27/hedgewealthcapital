@@ -145,3 +145,18 @@ html.lenis body {
 .post-body th, .post-body td { border: 1px solid rgb(25 40 97 / 0.1); padding: 0.6rem 0.8rem; text-align: left; }
 .post-body th { background: var(--color-navy-50); font-weight: 800; color: var(--color-navy); }
 .post-body mark { background: var(--color-leaf-100); color: var(--color-navy); padding: 0 0.2em; border-radius: 0.2em; }
+
+/* Header call to action: the main conversion button for paid traffic. */
+@keyframes cta-pulse {
+  0% { box-shadow: 0 4px 0 0 #4d8c22, 0 0 0 0 rgb(122 198 68 / 0.65); }
+  70%, 100% { box-shadow: 0 4px 0 0 #4d8c22, 0 0 0 14px rgb(122 198 68 / 0); }
+}
+@keyframes cta-shine {
+  0%, 55% { left: -40%; }
+  100% { left: 120%; }
+}
+.cta-pulse { animation: cta-pulse 2s ease-out infinite; }
+.cta-shine { animation: cta-shine 3.2s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .cta-pulse, .cta-shine { animation: none; }
+}

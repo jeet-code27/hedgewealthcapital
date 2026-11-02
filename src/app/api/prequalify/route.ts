@@ -7,7 +7,7 @@ type Inquiry = {
   email: string;
   phone: string;
   loanProduct: string;
-  referralSource: string;
+  creditScore: string;
 };
 
 function validate(body: Partial<Inquiry>): Record<string, string> {
@@ -17,7 +17,7 @@ function validate(body: Partial<Inquiry>): Record<string, string> {
   if (!body.email || !EMAIL.test(body.email)) errors.email = "Enter a valid email address.";
   if ((body.phone ?? "").replace(/\D/g, "").length !== 10) errors.phone = "Enter a 10-digit US phone number.";
   if (!body.loanProduct || !prequalify.loanProducts.includes(body.loanProduct)) errors.loanProduct = "Select a loan product.";
-  if (!body.referralSource || !prequalify.referralSources.includes(body.referralSource)) errors.referralSource = "Select an option.";
+  if (!body.creditScore || !prequalify.creditScores.includes(body.creditScore)) errors.creditScore = "Select your credit score.";
   return errors;
 }
 

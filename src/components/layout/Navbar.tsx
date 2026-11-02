@@ -41,7 +41,7 @@ export default function Navbar() {
         }`}
       >
         <Link href="/" className="flex items-center gap-2.5" aria-label="Hedge Wealth Capital home">
-          <Image src="/images/hwc-logo-header.png" alt="Hedge Wealth Capital" width={1642} height={748} className="h-14 w-auto sm:h-16" preload />
+          <Image src="/images/hwc-logo-header.png" alt="Hedge Wealth Capital" width={1642} height={748} className="h-11 w-auto min-[360px]:h-12 sm:h-16" preload />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
@@ -87,15 +87,23 @@ export default function Navbar() {
           )}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <a href={contact.phoneHref} className="hidden text-[14px] font-bold text-navy xl:block">
             {contact.phone}
           </a>
           <Link
             href="/#prequalify"
-            className="hidden rounded-xl bg-navy px-4 py-2.5 text-[14px] font-bold text-white transition hover:bg-navy-700 sm:inline-flex"
+            className="cta-pulse group relative inline-flex items-center gap-2 rounded-xl bg-leaf px-3 py-2.5 text-[13px] font-extrabold whitespace-nowrap text-navy shadow-[0_4px_0_0_#4d8c22,0_12px_24px_-8px_rgb(122_198_68/0.8)] transition hover:-translate-y-0.5 hover:brightness-105 active:translate-y-0.5 active:shadow-[0_1px_0_0_#4d8c22] sm:px-5 sm:py-3 sm:text-[15px]"
           >
-            Discuss Your Deal
+            <span aria-hidden className="absolute inset-0 overflow-hidden rounded-xl">
+              <span className="cta-shine absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-white/60 to-transparent" />
+            </span>
+            <span className="relative">
+              Discuss <span className="hidden min-[360px]:inline">Your </span>Deal
+            </span>
+            <svg className="relative hidden size-4 transition-transform group-hover:translate-x-1 sm:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M5 12h14M13 5l7 7-7 7" />
+            </svg>
           </Link>
           <button
             onClick={() => setOpen((v) => !v)}

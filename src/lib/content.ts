@@ -240,6 +240,7 @@ export const prequalify = {
     "Get your prequalification for an investment loan",
   ],
   loanProducts: ["Fix & Flip", "DSCR Rental", "Ground-Up Construction", "Multifamily Bridge", "Not sure yet"],
+  creditScores: ["Under 500", "500-599", "600-699", "700 & Above"],
   referralSources: ["Builder Online", "BiggerPockets", "Direct Mail", "Event", "Facebook", "LinkedIn", "Referred", "RIR Podcast", "Think Realty", "Web Search", "Other"],
   helper:
     "Please do not include Social Security numbers, bank account numbers, identification documents, or other sensitive financial information in this inquiry form.",

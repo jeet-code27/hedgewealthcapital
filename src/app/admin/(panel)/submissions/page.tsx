@@ -277,7 +277,7 @@ export default function SubmissionsPage() {
 
 function summary(s: Sub) {
   const f = s.fields;
-  return [f.loanProduct, f.purpose, f.amount, [f.city, f.state].filter(Boolean).join(", "), f.timing, f.company, f.nmls && `NMLS: ${f.nmls}`].filter(Boolean).join(" · ") || "—";
+  return [f.loanProduct, f.creditScore && `Credit: ${f.creditScore}`, f.purpose, f.amount, [f.city, f.state].filter(Boolean).join(", "), f.timing, f.company, f.nmls && `NMLS: ${f.nmls}`].filter(Boolean).join(" · ") || "—";
 }
 
 function Drawer({ sub, onClose, onStatus, onNotes, onDelete }: { sub: Sub; onClose: () => void; onStatus: (s: string) => void; onNotes: (n: string) => void; onDelete: () => void }) {
