@@ -7,6 +7,12 @@ export const ADS_ID = "AW-18530469727";
 /** Google Ads "HWC_Website_Form_Lead" conversion, counted once per successful form submission. */
 export const ADS_LEAD_CONVERSION = `${ADS_ID}/L0RSCL6Ak7EdEN-OgoRF`;
 
+/**
+ * Google Ads call conversion. For visitors who arrive from an ad, Google swaps the site phone
+ * number for a forwarding number and counts qualifying calls. It matches the number as displayed.
+ */
+export const ADS_CALL_CONVERSION = `${ADS_ID}/_UFwCL3zirEdEN-OgoRF`;
+
 /** Google Tag Manager container. Every tracked event is also pushed to the dataLayer as a GTM custom event. */
 export const GTM_ID = "GTM-M8QD7SSF";
 
