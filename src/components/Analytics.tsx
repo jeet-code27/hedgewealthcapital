@@ -3,9 +3,9 @@
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Script from "next/script";
-import { GA_ID, GTM_ID, pushDataLayer, track } from "@/lib/analytics";
+import { ADS_ID, GA_ID, GTM_ID, pushDataLayer, track } from "@/lib/analytics";
 
-/** Loads Google Tag Manager and the Google tag in production and tracks calls, emails and "get started" clicks across the site. */
+/** Loads Google Tag Manager and the Google tag (GA4 + Google Ads) in production and tracks calls, emails and "get started" clicks across the site. */
 export default function Analytics() {
   const pathname = usePathname();
   const firstPath = useRef(true);
@@ -51,7 +51,8 @@ j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNo
 function gtag(){dataLayer.push(arguments);}
 window.gtag = gtag;
 gtag('js', new Date());
-gtag('config', '${GA_ID}');`}
+gtag('config', '${GA_ID}');
+gtag('config', '${ADS_ID}');`}
       </Script>
     </>
   );

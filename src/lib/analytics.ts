@@ -1,6 +1,9 @@
 /** Google Analytics 4. Page views on in-site navigation come from GA's enhanced measurement. */
 export const GA_ID = "G-BRL5XG8ZXS";
 
+/** Google Ads account, configured on the same gtag.js loader as GA4. */
+export const ADS_ID = "AW-18530469727";
+
 /** Google Tag Manager container. Every tracked event is also pushed to the dataLayer as a GTM custom event. */
 export const GTM_ID = "GTM-M8QD7SSF";
 
