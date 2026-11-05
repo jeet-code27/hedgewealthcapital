@@ -64,9 +64,9 @@ export const areas: AreaPage[] = [
     kind: "Hard Money & DSCR",
     map: "NYC",
     meta: {
-      title: "Hard Money & DSCR Lenders in New York City | HWC",
+      title: "Hard Money Lenders in New York City | Hedge Wealth Capital",
       description:
-        "Hard money and DSCR loans in Manhattan, Brooklyn, Queens, the Bronx and Staten Island. Up to 100% of purchase and rehab, 30-year rental loans.",
+        "Explore hard money loans in New York City for real estate investors. Find financing for property purchases, fix-and-flip projects and renovations.",
       keywords: ["hard money lenders new york city", "dscr loans nyc", "private money lenders new york", "hard money lenders brooklyn", "fix and flip loans queens"],
     },
     hero: {
@@ -142,9 +142,9 @@ export const areas: AreaPage[] = [
     kind: "Hard Money & DSCR",
     map: "CT",
     meta: {
-      title: "Connecticut Hard Money & DSCR Lenders | HWC",
+      title: "Hard Money Lenders in Connecticut | Hedge Wealth Capital",
       description:
-        "Hard money and DSCR loans in Bridgeport, New Haven, Stamford, Hartford and statewide. Up to 100% of purchase and rehab and 30-year rental loans.",
+        "Looking for hard money lenders in Connecticut? Explore real estate financing for investment properties, house flipping and renovation projects today.",
       keywords: ["hard money lenders connecticut", "dscr loans ct", "private mortgage lenders connecticut", "fix and flip loans bridgeport", "hard money lenders new haven"],
     },
     hero: {
@@ -221,9 +221,9 @@ export const areas: AreaPage[] = [
     kind: "Hard Money & DSCR",
     map: "MA",
     meta: {
-      title: "Massachusetts Hard Money & DSCR Lenders | HWC",
+      title: "Hard Money Lenders in Massachusetts | Hedge Wealth Capital",
       description:
-        "Massachusetts hard money and DSCR loans from a lender based in Canton, MA. Up to 100% of purchase and rehab and 30-year rental loans, Boston to the Berkshires.",
+        "Explore hard money loans in Massachusetts for real estate investors. Find financing for property acquisitions, fix-and-flip projects and renovations.",
       keywords: ["hard money lender massachusetts", "fix and flip loans massachusetts", "dscr loans massachusetts", "private money lenders boston", "investor construction loans massachusetts"],
     },
     hero: {
@@ -300,9 +300,9 @@ export const areas: AreaPage[] = [
     kind: "Hard Money & DSCR",
     map: "WOR",
     meta: {
-      title: "Hard Money & DSCR Lenders in Worcester County, MA | HWC",
+      title: "Hard Money Lenders in Worcester County, MA | HWC",
       description:
-        "Massachusetts-based lender funding Worcester, Leominster, Fitchburg and all of Worcester County. Triple-decker rehabs, flips and 30-year rental loans.",
+        "Find hard money loan options in Worcester County, MA for real estate investments. Explore financing for property purchases and renovations today.",
       keywords: ["hard money lenders worcester ma", "dscr loans worcester county", "private money lenders central mass", "fix and flip loans leominster", "fitchburg investment property loans"],
     },
     hero: {
@@ -379,9 +379,9 @@ export const areas: AreaPage[] = [
     kind: "Hard Money",
     map: "TX",
     meta: {
-      title: "Hard Money Lenders in Texas | Fix and Flip Loans | HWC",
+      title: "Hard Money Lenders in Texas | Hedge Wealth Capital",
       description:
-        "Texas fix and flip and bridge loans in Dallas-Fort Worth, Houston, Austin, San Antonio and statewide. Up to 100% of purchase and rehab, same-day approvals.",
+        "Explore hard money loans in Texas for real estate investors. Find financing for investment property purchases, fix-and-flip projects and renovations.",
       keywords: ["hard money lenders texas", "texas hard money lenders", "fix and flip loans texas", "bridge loans texas", "texas hard money loans"],
     },
     hero: {
@@ -453,9 +453,9 @@ export const areas: AreaPage[] = [
     kind: "DSCR",
     map: "TX",
     meta: {
-      title: "Texas DSCR Loans | 30-Year Rental Property Loans | HWC",
+      title: "DSCR Loans in Texas for Rental Property Investors | HWC",
       description:
-        "Texas DSCR loans for rental property in Houston, Dallas, San Antonio, Austin and statewide. Qualify on rent with no tax returns, up to 80% LTV and 680+ FICO.",
+        "Explore DSCR loans in Texas for rental property investors. Review financing options based on property cash flow and support your investment goals.",
       keywords: ["dscr loans texas", "texas dscr lenders", "dscr loan texas", "investment property loans texas", "rental property loans texas"],
     },
     hero: {
@@ -526,9 +526,9 @@ export const areas: AreaPage[] = [
     kind: "Hard Money",
     map: "FL",
     meta: {
-      title: "Florida Hard Money Lenders | Fix & Flip Loans | HWC",
+      title: "Hard Money Lenders in Florida | Hedge Wealth Capital",
       description:
-        "Florida hard money loans for flips and bridge deals in Miami, Tampa, Orlando and statewide. Up to 100% of purchase and rehab with same-day approvals.",
+        "Explore hard money loans in Florida for real estate investors. Find financing for investment property purchases, fix-and-flip projects today.",
       keywords: ["hard money lenders florida", "florida hard money lenders", "fix and flip loans florida", "hard money loans florida", "bridge loans florida"],
     },
     hero: {
@@ -600,9 +600,9 @@ export const areas: AreaPage[] = [
     kind: "DSCR",
     map: "FL",
     meta: {
-      title: "Florida DSCR Loans | Long-Term Rental Financing | HWC",
+      title: "DSCR Loans in Florida for Rental Property Investors | HWC",
       description:
-        "Florida DSCR loans for long-term and short-term rentals in Orlando, Tampa, Jacksonville, Miami and statewide. No tax returns, up to 80% LTV, 30-year fixed.",
+        "Explore DSCR loans in Florida for rental property investors. Review financing options based on rental income and support your investment goals today.",
       keywords: ["dscr loans florida", "florida dscr lenders", "dscr loan florida", "florida investment property loans", "short term rental dscr florida"],
     },
     hero: {
@@ -673,9 +673,9 @@ export const areas: AreaPage[] = [
     kind: "Hard Money",
     map: "GA",
     meta: {
-      title: "Georgia Hard Money Lenders | Atlanta Fix & Flip | HWC",
+      title: "Hard Money Lenders in Georgia | Hedge Wealth Capital",
       description:
-        "Georgia hard money loans for fix and flip investors in Atlanta, Savannah, Augusta, Macon and statewide. Up to 100% of purchase and rehab, same-day approvals.",
+        "Explore hard money loans in Georgia for real estate investors. Find financing for property purchases, fix-and-flip projects and renovations for homes.",
       keywords: ["hard money lenders georgia", "hard money lenders atlanta", "fix and flip loans georgia", "georgia hard money loans", "atlanta fix and flip lenders"],
     },
     hero: {
@@ -746,9 +746,9 @@ export const areas: AreaPage[] = [
     kind: "DSCR",
     map: "GA",
     meta: {
-      title: "Georgia DSCR Loans | Atlanta Rental Property Loans | HWC",
+      title: "DSCR Loans in Georgia | Hedge Wealth Capital",
       description:
-        "Georgia DSCR loans for rental investors in metro Atlanta, Savannah, Augusta and statewide. Qualify on rent, no tax returns, up to 80% LTV and 30-year fixed.",
+        "Explore DSCR loans in Georgia for rental property investors. Find financing based on property cash flow for your next real estate investment options!",
       keywords: ["dscr loans georgia", "georgia dscr lenders", "dscr loan atlanta", "rental property loans georgia", "atlanta investment property loans"],
     },
     hero: {
@@ -818,9 +818,9 @@ export const areas: AreaPage[] = [
     kind: "Hard Money",
     map: "NC",
     meta: {
-      title: "North Carolina Hard Money Lenders | Fix & Flip Loans | HWC",
+      title: "Hard Money Lenders in North Carolina | HWC",
       description:
-        "North Carolina hard money loans for flips in Charlotte, Raleigh-Durham, Greensboro and statewide. Up to 100% of purchase and rehab, same-day approvals.",
+        "Explore hard money loans in North Carolina for real estate investors. Find financing for property purchases, fix-and-flip projects and home renovations.",
       keywords: ["hard money lenders north carolina", "hard money lenders charlotte nc", "fix and flip loans north carolina", "raleigh hard money lenders", "nc hard money loans"],
     },
     hero: {
@@ -892,9 +892,9 @@ export const areas: AreaPage[] = [
     kind: "DSCR",
     map: "NC",
     meta: {
-      title: "North Carolina DSCR Loans | Rental Property Financing | HWC",
+      title: "DSCR Loans in North Carolina | Hedge Wealth Capital",
       description:
-        "North Carolina DSCR loans for rentals in Charlotte, Raleigh-Durham, Greensboro, Fayetteville and statewide. No tax returns, up to 80% LTV, 30-year fixed.",
+        "Explore DSCR loans in North Carolina for rental property investors. Find financing based on rental income for your next real estate investment options.",
       keywords: ["dscr loans north carolina", "nc dscr lenders", "dscr loan charlotte", "raleigh rental property loans", "north carolina investment property loans"],
     },
     hero: {
@@ -965,9 +965,9 @@ export const areas: AreaPage[] = [
     kind: "Hard Money",
     map: "CO",
     meta: {
-      title: "Colorado Hard Money Lenders | Denver Fix & Flip Loans | HWC",
+      title: "Hard Money Lenders in Colorado | HWC",
       description:
-        "Colorado hard money loans for flips and bridge deals in Denver, Colorado Springs, Aurora and statewide. Up to 100% of purchase and rehab, same-day approvals.",
+        "Explore hard money loans in Colorado for real estate investors. Find financing for property purchases, fix-and-flip projects and home renovation projects.",
       keywords: ["hard money lenders colorado", "hard money lenders denver", "fix and flip loans colorado", "colorado hard money loans", "colorado springs hard money"],
     },
     hero: {

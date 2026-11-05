@@ -274,7 +274,7 @@ export default function Prequalify() {
   return (
     <section id="prequalify" className="relative scroll-mt-20 px-4 pb-24 sm:px-6">
       <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[36px] bg-navy text-white">
-        <ImageSlot src={images.cta} alt="" hint="cta.jpg" dark className="absolute inset-0 opacity-30" sizes="(min-width: 1280px) 1280px, 100vw" />
+        <ImageSlot src={images.cta} alt="Aerial view of a suburban neighborhood" hint="cta.jpg" dark className="absolute inset-0 opacity-30" sizes="(min-width: 1280px) 1280px, 100vw" />
         <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy/90 to-navy-950/80" />
         <div className="bg-grid-dark absolute inset-0" />
         <div className="absolute -top-32 -left-32 size-[460px] rounded-full bg-leaf/20 blur-[120px]" />

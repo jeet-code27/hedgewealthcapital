@@ -58,9 +58,9 @@ export const services: ServicePage[] = [
     tag: "Fix & Flip Financing",
     icon: "hammer",
     meta: {
-      title: "Hard Money Loans for Flipping Houses | Up to 100% LTC",
+      title: "Hard Money Loans for Flipping Houses | Hedge Wealth Capital",
       description:
-        "Hard money fix and flip loans covering up to 100% of purchase and rehab. Same-day approval, pre-approval with no deal required, fast closings in all 50 states.",
+        "Finance your next house-flipping project with hard money loans designed for real estate investors. Explore funding for purchases and renovations today.",
       keywords: ["hard money loans for flipping houses", "hard money fix and flip loans", "hard money loan to flip houses", "hard money lenders for fix and flip"],
     },
     hero: {
@@ -158,7 +158,7 @@ export const services: ServicePage[] = [
     meta: {
       title: "Private Money Lenders for Real Estate Investors | HWC",
       description:
-        "Direct private money lender funding investors with its own capital since 2010. In-house underwriting, same-day approvals, loans in all 50 states and D.C.",
+        "Find private money lenders for real estate investments. Explore financing for property purchases and renovations with Hedge Wealth Capital. Apply today.",
       keywords: ["private money lenders for real estate", "private money lender", "private lenders for real estate", "private mortgage lenders"],
     },
     hero: {
@@ -251,9 +251,9 @@ export const services: ServicePage[] = [
     tag: "30-Year Rental Loans",
     icon: "home",
     meta: {
-      title: "DSCR Loans for Investment Property | 30-Year Fixed | HWC",
+      title: "DSCR Loans for Investment Property | Hedge Wealth Capital",
       description:
-        "30-year fixed DSCR loans that qualify on rental cash flow, not personal income. Up to 80% LTV, 680+ FICO, no tax returns or W-2s, in all 50 states.",
+        "Get financing for investment properties with DSCR loans based on rental income. Explore long-term rental property loan options with our lending team.",
       keywords: ["dscr loan", "dscr loans", "dscr loan for investment property", "dscr loan lenders", "dscr loan program"],
     },
     hero: {
@@ -340,9 +340,9 @@ export const services: ServicePage[] = [
     tag: "After-Repair Value Lending",
     icon: "trend",
     meta: {
-      title: "ARV Loans for Investors | After Repair Value Financing | HWC",
+      title: "ARV-Based Hard Money Loans for Property Investors | HWC",
       description:
-        "ARV loans sized on what your property will be worth after renovation. Fund purchase and rehab with draws as work is completed, in all 50 states.",
+        "Explore ARV-based hard money loans for investment properties that need renovation. Review financing options based on after-repair value today.",
       keywords: ["arv loan", "arv loans", "arv lenders", "loan to arv", "arv finance"],
     },
     hero: {
@@ -416,9 +416,9 @@ export const services: ServicePage[] = [
     tag: "Rental Property Refinance",
     icon: "cash",
     meta: {
-      title: "Cash-Out Refinance on Rental Property | Up to 75% LTV",
+      title: "Cash-Out Refinance for Rental Property | HWC",
       description:
-        "Cash-out refinance your rental based on rental cash flow, not personal income. Up to 75% LTV, typical 3-month seasoning, and a Delayed Purchase option.",
+        "Access equity in your rental property with cash-out refinance options. Explore investor-focused financing for your next real estate investment goals.",
       keywords: ["cash out refinance rental property", "rental property cash out refinance", "cash out refi on rental property", "rental property refinance lenders"],
     },
     hero: {
@@ -503,9 +503,9 @@ export const services: ServicePage[] = [
     tag: "Portfolio Financing",
     icon: "grid",
     meta: {
-      title: "Rental Portfolio Loans for Growing Investors | HWC",
+      title: "Rental Portfolio Loans for Real Estate Investors | HWC",
       description:
-        "Rental portfolio loans for investors scaling from one property to many. Cash-flow approval, no personal income verification, LLCs welcome, all 50 states.",
+        "Finance multiple rental properties with rental portfolio loan options for real estate investors. Explore ways to grow your investment portfolio today.",
       keywords: ["rental portfolio loans", "rental portfolio lenders", "rental property portfolio loans", "single family rental portfolio financing"],
     },
     hero: {
@@ -592,7 +592,7 @@ export const services: ServicePage[] = [
     meta: {
       title: "Bridge Loans for Real Estate Investors | HWC",
       description:
-        "Short-term bridge loans for investment property: up to 90% LTC on multifamily and new construction, with closings in as little as 7 days in all 50 states.",
+        "Move forward with your next property investment using bridge loans for real estate investors. Explore short-term financing for acquisitions today.",
       keywords: ["bridge loans for real estate investors", "bridge loan lenders", "bridge loan for investment property", "multifamily bridge loans"],
     },
     hero: {
@@ -677,9 +677,9 @@ export const services: ServicePage[] = [
     tag: "New Build Financing",
     icon: "crane",
     meta: {
-      title: "Ground-Up Construction Loans | Up to 90% LTC | HWC",
+      title: "Ground-Up Construction Loans for Investors | HWC",
       description:
-        "Ground-up construction loans up to 90% LTC, covering land, horizontal and vertical costs, with draws in as little as 3 business days in all 50 states.",
+        "Fund your next development with ground-up construction loans for investors. Explore financing for land, site development and residential construction.",
       keywords: ["ground up construction loans", "construction loans for investors", "new construction financing for investors", "spec home construction loans"],
     },
     hero: {
@@ -772,9 +772,9 @@ export const services: ServicePage[] = [
     tag: "5–10 Unit Value-Add",
     icon: "building",
     meta: {
-      title: "Multifamily Bridge Loans | Hedge Wealth Capital",
+      title: "Multifamily Bridge Loans for Investors | HWC",
       description:
-        "Multifamily bridge loans for 5–10 unit value-add deals: purchase and rehab financing up to 90% LTC, no appraisal required, closings in as little as 7 days.",
+        "Explore multifamily bridge loans for property acquisition, renovation and investment projects. Find financing options for real estate investors today.",
       keywords: ["multifamily bridge loans", "apartment bridge loans", "value add multifamily financing", "5-10 unit property loans"],
     },
     hero: {
