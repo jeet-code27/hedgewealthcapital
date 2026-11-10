@@ -25,6 +25,7 @@ Contact: ${contact.phone} · ${contact.email} · ${contact.address}
 - [About Hedge Wealth Capital](${url("/about-hedge-wealth-capital")}): Company history, the Hedge Wealth Group and lending footprint
 - [Contact](${url("/contact-us")}): Phone, email, office and deal inquiry form
 - [Compare Loan Programs](${url("/loan-programs")}): Side-by-side comparison of every loan program
+- [Mortgage and Loan Types Explained](${url("/mortgage-loan-types")}): Definitions, uses and borrowers for 31 loan types, and which ones Hedge Wealth Capital offers
 - [Areas We Serve](${url("/areas-we-serve")}): Local lending pages by market
 - [Brokers](${url("/brokers")}): Broker partner program and application
 - [Blog](${url("/blog")}): Company news and product updates

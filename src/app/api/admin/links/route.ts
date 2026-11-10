@@ -12,6 +12,7 @@ export const GET = adminRoute(async () => {
     { group: "Company", title: "Home", path: "/" },
     { group: "Company", title: "About Hedge Wealth Capital", path: "/about-hedge-wealth-capital" },
     { group: "Company", title: "Areas We Serve", path: "/areas-we-serve" },
+    { group: "Company", title: "Mortgage and Loan Types guide", path: "/mortgage-loan-types" },
     { group: "Company", title: "Broker Program", path: "/brokers" },
     { group: "Company", title: "Contact Us", path: "/contact-us" },
     { group: "Company", title: "Prequalify (home form)", path: "/#prequalify" },

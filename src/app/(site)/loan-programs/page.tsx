@@ -171,6 +171,23 @@ export default function LoanProgramsPage() {
           <p className="mt-6 max-w-4xl text-xs leading-relaxed text-muted">
             Figures are program maximums, not offers. Closing costs, reserves and interest are paid separately where they apply, and all financing is subject to underwriting, property eligibility and final loan terms.
           </p>
+          <div className="mt-10">
+            <Link
+              href="/mortgage-loan-types"
+              className="group mx-auto flex max-w-5xl flex-col gap-3 rounded-[24px] border border-navy/10 bg-white p-6 shadow-[0_24px_50px_-40px_rgb(25_40_97/0.7)] transition hover:-translate-y-0.5 sm:flex-row sm:items-center sm:justify-between sm:p-7"
+            >
+              <span>
+                <span className="block text-xs font-extrabold tracking-[0.16em] text-leaf-600 uppercase">Free guide</span>
+                <span className="mt-1 block text-lg font-extrabold text-navy">Mortgage and Loan Types Explained: 31 types compared</span>
+              </span>
+              <span className="inline-flex items-center gap-2 font-bold text-navy">
+                <span className="border-b-2 border-leaf pb-0.5">Read the guide</span>
+                <svg className="size-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden>
+                  <path d="M5 12h14M13 5l7 7-7 7" />
+                </svg>
+              </span>
+            </Link>
+          </div>
         </div>
       </section>
 
