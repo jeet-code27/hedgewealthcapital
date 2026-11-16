@@ -5,9 +5,9 @@
 import { prequalify } from "@/lib/content";
 
 export const brokerMeta = {
-  title: "Private Lending Broker Program | Hedge Wealth Capital",
+  title: "Brokers: Partner With a Private Lender | HWC",
   description:
-    "Partner with Hedge Wealth Capital: DSCR, bridge and non-QM access, white-label service and a Price-Beat Guarantee in all 50 states. Apply as a broker partner.",
+    "Mortgage brokers: submit fix-and-flip, DSCR, bridge and construction deals to a direct private lender. See how the Hedge Wealth Capital broker program works.",
 };
 
 export const brokerHero = {

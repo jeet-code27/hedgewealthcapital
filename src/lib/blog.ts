@@ -19,9 +19,9 @@ export type BlogPost = {
 };
 
 export const blogMeta = {
-  title: "Real Estate Financing Guides & News | Hedge Wealth Capital",
+  title: "Hard Money & DSCR Loan Blog | Hedge Wealth Capital",
   description:
-    "Company news, new loan products and insights for real estate investors from Hedge Wealth Capital, a direct private lender in all 50 states.",
+    "Guides on hard money, fix-and-flip, DSCR, bridge and construction loans for real estate investors. Plain answers from Hedge Wealth Capital.",
   intro:
     "Announcements on new loan products, company milestones and partnerships, plus insights that reflect our commitment to supporting real estate investors.",
 };

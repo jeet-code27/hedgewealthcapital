@@ -252,7 +252,7 @@ function PrequalifyForm() {
           <p className="text-[11px] leading-relaxed text-muted">
             {prequalify.consent} View{" "}
             <a href="/terms-of-use" className="font-semibold text-navy underline">
-              Terms of Service
+              Terms of Use
             </a>{" "}
             and{" "}
             <a href="/privacy-policy" className="font-semibold text-navy underline">

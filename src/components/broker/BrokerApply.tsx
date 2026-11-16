@@ -212,7 +212,7 @@ export default function BrokerApply() {
                   <span className="relative transition-colors duration-500 group-hover:text-navy">{status === "sending" ? "Sending..." : "Submit Application"}</span>
                 </button>
                 <p className="text-[11px] leading-relaxed text-muted">
-                  {brokerForm.consent} View <a href="/terms-of-use" className="font-semibold text-navy underline">Terms of Service</a> and{" "}
+                  {brokerForm.consent} View <a href="/terms-of-use" className="font-semibold text-navy underline">Terms of Use</a> and{" "}
                   <a href="/privacy-policy" className="font-semibold text-navy underline">
                     Privacy Policy
                   </a>

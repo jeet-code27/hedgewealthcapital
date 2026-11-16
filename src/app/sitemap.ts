@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { services } from "@/lib/services";
 import { areas } from "@/lib/areas";
+import { legalDocs } from "@/lib/legal-content";
 import { getPublishedPosts } from "@/lib/posts";
 import { site } from "@/lib/site";
 
@@ -18,6 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${site.url}/areas-we-serve`, lastModified: updated, changeFrequency: "monthly", priority: 0.8 },
     { url: `${site.url}/brokers`, lastModified: updated, changeFrequency: "monthly", priority: 0.7 },
     { url: `${site.url}/blog`, lastModified: updated, changeFrequency: "weekly", priority: 0.6 },
+    ...legalDocs.map((d) => ({ url: `${site.url}/${d.slug}`, lastModified: "2026-11-16", changeFrequency: "yearly" as const, priority: 0.2 })),
     ...posts.map((p) => ({ url: `${site.url}/blog/${p.slug}`, lastModified: p.date, changeFrequency: "yearly" as const, priority: 0.5 })),
     ...areas.map((a) => ({ url: `${site.url}${a.path}`, lastModified: updated, changeFrequency: "monthly" as const, priority: 0.8 })),
     ...services.map((s) => ({ url: `${site.url}${s.path}`, lastModified: updated, changeFrequency: "monthly" as const, priority: 0.9 })),
