@@ -22,8 +22,48 @@ export const blogMeta = {
   title: "Hard Money & DSCR Loan Blog | Hedge Wealth Capital",
   description:
     "Guides on hard money, fix-and-flip, DSCR, bridge and construction loans for real estate investors. Plain answers from Hedge Wealth Capital.",
+  // Block A / Block B copy from the SEO audit (Tab 3) so the page carries text beyond the post cards.
   intro:
-    "Announcements on new loan products, company milestones and partnerships, plus insights that reflect our commitment to supporting real estate investors.",
+    "Plain answers to the questions investors ask us every week. How much cash do you need to close on a flip? How does a lender size a DSCR loan? When does a bridge loan make more sense than a hard money loan? We write these guides from the deals we fund, so they cover the numbers and the paperwork as well as the definitions.",
+  newHere:
+    "New here? Start with [What is a DSCR loan?](/blog/what-is-a-dscr-loan) if you're buying rentals, or [100% LTC fix-and-flip loans and cash to close](/blog/100-ltc-fix-and-flip-loan-cash-to-close) if you're flipping.",
+  topics: [
+    {
+      title: "Fix and flip",
+      text: "How hard money and ARV loans are sized, what lenders mean by loan-to-cost and after-repair value, how rehab draws work, and what to budget for closing.",
+      links: [
+        { label: "Hard money loans", href: "/hard-money-loans" },
+        { label: "ARV loans", href: "/arv-loans" },
+      ],
+    },
+    {
+      title: "Rental properties and DSCR",
+      text: "How debt service coverage ratio is calculated, which rents a lender will count, and when a cash-out refinance or portfolio loan beats financing properties one at a time.",
+      links: [
+        { label: "DSCR loans", href: "/dscr-loans" },
+        { label: "Cash-out refinance", href: "/rental-loans/cash-out-refinance" },
+        { label: "Rental portfolio loans", href: "/rental-portfolio-loans" },
+      ],
+    },
+    {
+      title: "Bridge and construction",
+      text: "Short-term financing for buying before you sell, stabilizing a multifamily building, or building from the ground up.",
+      links: [
+        { label: "Bridge loans", href: "/bridge-loans" },
+        { label: "Multifamily bridge", href: "/loan-programs/multifamily-bridge" },
+        { label: "Ground-up construction", href: "/loan-programs/ground-up-construction" },
+      ],
+    },
+    {
+      title: "State guides",
+      text: "Market notes and lending details for the states with their own pages, plus our guide to every common loan type.",
+      links: [
+        { label: "All areas we serve", href: "/areas-we-serve" },
+        { label: "Mortgage and loan types", href: "/mortgage-loan-types" },
+      ],
+    },
+  ],
+  dealCta: "Send the address, purchase price and rehab budget, and we'll tell you what we can lend.",
 };
 
 export const posts: BlogPost[] = [
